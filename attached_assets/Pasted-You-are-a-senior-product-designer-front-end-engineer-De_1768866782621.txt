@@ -1,0 +1,65 @@
+You are a senior product designer + front-end engineer. Design and implement a modern, premium marketing site for https://www.ohzoneclinics.com/ inspired by the customer journey and design patterns of https://www.theclass.com/ (clean editorial typography, immersive hero, clear pathway CTAs, “choose your reason” style entry points, simple pricing/booking funnel, elegant section pacing, high-end wellness brand feel).
+
+GOAL
+Increase bookings and guide visitors to the right service quickly. Primary CTA: “Book Appointment” (links to https://ohzoneclinics.janeapp.com/). Secondary CTAs: “Explore Services”, “Consultations”, “Contact”.
+
+TECH / OUTPUT
+- Build with Next.js (App Router) + TypeScript + Tailwind CSS + shadcn/ui components.
+- Fully responsive, accessible (WCAG-minded), fast (Lighthouse-friendly).
+- Use semantic HTML, strong typography scale, generous whitespace, subtle motion (Framer Motion).
+- Create reusable components and a clean design system (tokens for spacing, type, radius, shadows).
+- Use placeholder images (local / public) and placeholder copy where needed, but structure must match real content areas.
+- Include a simple data model (JSON/TS objects) for services/categories so the UI is data-driven.
+
+INFORMATION ARCHITECTURE (PAGES)
+1) Home (/)
+2) Services (/services) with category browsing and a “Find your treatment” flow
+3) Service Detail (/services/[slug]) template (use mock data for several services)
+4) Consultations (/consultations) (prominent as a recommended starting point)
+5) CellCore Detox Protocol (/cellcore-detox) and also link to https://www.ohzoneclinics.com/cellcore-supplements
+6) About (/about)
+7) Contact (/contact)
+
+HOMEPAGE JOURNEY (MODELED AFTER THECLASS)
+- Sticky nav with: Services, Consultations, CellCore Detox, About, The Wellness Zone (external), Contact, Book Appointment (primary button).
+- Hero: short, emotionally resonant headline + subhead + 2 CTAs (Book / Explore). Background can be video-like feel (gradient + subtle noise) if no video.
+- “Choose your goal” entry section (mirrors The Class “Take a Class for ___”):
+  Create 6 tiles:
+  - Detox & Reset
+  - Pain Relief & Recovery
+  - Energy & Performance
+  - Longevity & Optimization
+  - Skin & Aesthetics
+  - Weight & Metabolic Health
+  Each tile routes to a filtered services view.
+- “Featured experiences” carousel/grid (like class thumbnails): show 6–8 curated services with duration/what to expect tags and a “Learn more”.
+- “The OhZone Method” section (like The Class Physical/Mental/Emotional): 3 pillars:
+  - Clinic Therapies (biohacking modalities)
+  - Medical (IVs/injections/testing)
+  - Aesthetics & Regenerative
+  Each with concise copy + link to Services filtered.
+- “How it works” 3-step:
+  1) Start with Consultation (recommended)
+  2) Personal plan + optional detox protocol
+  3) Book sessions + track progress
+- “CellCore Detox Protocol” feature block:
+  Explain it as a guided detox pathway, link to /cellcore-detox and also provide an external link to https://www.ohzoneclinics.com/cellcore-supplements
+- Social proof: testimonials + trust markers (disclaimer-safe; no medical claims).
+- Final CTA band: “Book your consultation” + “Book Appointment”.
+
+SERVICES & CATEGORIES (DATA-DRIVEN)
+Create categories and sample items (slug, title, short description, tags, duration, intensity, recommended-for goals).
+Categories (from OhZone nav):
+- Clinic: Ozone Sauna (Level One), HOCATT Sauna (Level Two), Far Infrared Sauna, Theta Chamber, Lymphatic LET Therapy, Flowpresso Lymphatic Compression, PEMF Therapy, Hyperbaric Chamber, HBOT Hyper Cube, Hydrogen Therapy, Myofacial Stretch & Massage, RF Detox Foot Bath, The Brain Tap, VIBE Bed
+- Medical: Weight Loss Injections, Vitamin Injections, Peptide Injections, Vitamin IV Treatments, Ozone IV Treatments, The Luma IV, Functional Medical Testing, Curewave Laser Treatments, EB02 Therapy, Methylene Blue
+- Aesthetics: Plasma Skin Rejuvenation, EZ-Gel Rejuvenation, Microneedling Treatments, Exosome Treatments, Collagen Stimulation, Glutathione Treatments, Skin & Facial Fillers, Red Light & Skin Rejuvenation, Hair Restoration
+- Regenerative: Joint Regeneration, Prolozone Pain Relief, NAD Injection Program
+
+SERVICES PAGE UX
+- Above the fold: “Find your treatment” search + goal chips + category tabs.
+- Filters: goal, category, time (15/30/60+), intensity (gentle/standard/intense), “first-timer friendly”.
+- Results: elegant cards; clicking goes to detail page.
+- Persistent booking CTA.
+
+SERVICE DETAIL TEMPLATE
+- Hero: service name + 1-sentence benefit (non-medical-claimy) + “Book Appointment” b
