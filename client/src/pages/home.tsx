@@ -30,12 +30,12 @@ export default function Home() {
 
         {/* Content */}
         <div className="container relative z-10 px-6 pt-20 text-center md:text-left md:flex md:items-end md:justify-between h-full pb-20 md:pb-32">
-          <div className="max-w-3xl space-y-6">
+          <div className="max-w-3xl space-y-6 mx-auto md:mx-0">
             <motion.span 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="inline-block py-1 px-3 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs font-medium tracking-widest uppercase mb-4"
+              className="inline-block py-1 px-3 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-[10px] md:text-xs font-medium tracking-widest uppercase mb-2 md:mb-4"
             >
               Welcome to the OhZone
             </motion.span>
@@ -43,7 +43,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-5xl md:text-7xl lg:text-8xl font-serif font-medium text-white leading-[1.1] tracking-tight"
+              className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-serif font-medium text-white leading-[1.1] tracking-tight"
             >
               Elevate your <br className="hidden md:block" />
               <span className="italic font-light">vitality.</span>

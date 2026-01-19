@@ -77,16 +77,17 @@ export function Navbar() {
 
         {/* Mobile Toggle */}
         <button 
-          className="md:hidden text-foreground"
+          className="md:hidden text-foreground p-2"
           onClick={() => setIsOpen(!isOpen)}
         >
-          {isOpen ? <X /> : <Menu />}
+          {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
       </div>
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-background border-b border-border/40 p-6 flex flex-col gap-4 animate-in slide-in-from-top-5">
+        <div className="md:hidden fixed top-[72px] left-0 w-full h-[calc(100vh-72px)] bg-background/95 backdrop-blur-xl border-t border-border/40 p-6 flex flex-col gap-6 animate-in slide-in-from-top-5 overflow-y-auto z-40">
+          <div className="flex flex-col gap-6 mt-4">
           {navLinks.map((link) => (
             link.external ? (
               <a
