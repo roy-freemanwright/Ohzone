@@ -153,19 +153,24 @@ export function Navbar() {
                   </SheetTitle>
                 </SheetHeader>
 
-                <div className="flex flex-col gap-2 flex-grow">
+                <div className="flex flex-col gap-y-2 flex-grow">
                   <Accordion type="single" collapsible className="w-full border-none">
-                    <AccordionItem value="services" className="border-b border-border/10">
-                      <AccordionTrigger className="text-xl font-serif font-medium hover:no-underline py-4">Services</AccordionTrigger>
-                      <AccordionContent>
-                        <div className="flex flex-col gap-4 pl-4 pb-4">
+                    <AccordionItem value="services" className="border-none">
+                      <AccordionTrigger className="text-xl font-serif font-medium hover:no-underline py-3 text-left">Services</AccordionTrigger>
+                      <AccordionContent className="pb-4 pt-2">
+                        <div className="flex flex-col gap-y-6 pl-2">
                           {serviceCategories.map((cat) => (
                             <Link key={cat.name} href={cat.href}>
                               <a 
-                                className="text-base text-muted-foreground hover:text-primary transition-colors py-2 block"
+                                className="group block"
                                 onClick={() => setOpen(false)}
                               >
-                                {cat.name}
+                                <div className="text-base font-medium text-foreground group-hover:text-primary transition-colors mb-1">
+                                  {cat.name}
+                                </div>
+                                <div className="text-sm text-muted-foreground leading-snug">
+                                  {cat.description}
+                                </div>
                               </a>
                             </Link>
                           ))}
@@ -181,7 +186,7 @@ export function Navbar() {
                         href={link.href}
                         target="_blank"
                         rel="noreferrer"
-                        className="text-xl font-serif font-medium text-foreground hover:text-primary py-4 border-b border-border/10"
+                        className="text-xl font-serif font-medium text-foreground hover:text-primary py-3 border-none block"
                         onClick={() => setOpen(false)}
                       >
                         {link.name}
@@ -190,7 +195,7 @@ export function Navbar() {
                       <Link key={link.name} href={link.href}>
                         <a 
                           className={cn(
-                            "text-xl font-serif font-medium hover:text-primary py-4 border-b border-border/10",
+                            "text-xl font-serif font-medium hover:text-primary py-3 border-none block",
                             location === link.href ? "text-primary" : "text-foreground"
                           )}
                           onClick={() => setOpen(false)}
