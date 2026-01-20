@@ -153,12 +153,12 @@ export function Navbar() {
                   </SheetTitle>
                 </SheetHeader>
 
-                <div className="flex flex-col flex-grow">
+                <div className="flex flex-col gap-2 flex-grow">
                   <Accordion type="single" collapsible className="w-full border-none">
                     <AccordionItem value="services" className="border-b border-border/10">
                       <AccordionTrigger className="text-xl font-serif font-medium hover:no-underline py-4">Services</AccordionTrigger>
                       <AccordionContent>
-                        <div className="flex flex-col gap-2 pl-4 pb-4">
+                        <div className="flex flex-col gap-4 pl-4 pb-4">
                           {serviceCategories.map((cat) => (
                             <Link key={cat.name} href={cat.href}>
                               <a 
