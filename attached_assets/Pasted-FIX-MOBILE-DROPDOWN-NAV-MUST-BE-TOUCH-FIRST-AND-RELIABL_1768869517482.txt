@@ -1,0 +1,35 @@
+FIX MOBILE DROPDOWN / NAV — MUST BE TOUCH-FIRST AND RELIABLE
+
+The header dropdown/menu is not working correctly on mobile. Refactor the navigation so it is mobile-first, accessible, and robust.
+
+REQUIREMENTS
+- On mobile (<= md), use a hamburger that opens a full-screen or bottom-sheet overlay menu (preferred), NOT hover-based dropdowns.
+- Do not rely on :hover for any mobile interactions. All dropdowns must open/close via tap/click.
+- The menu must be fully usable with one hand: large tap targets (44px+), generous spacing, clear close button.
+- Body scroll must be locked when the menu is open; restore scroll on close.
+- Tapping outside the menu closes it.
+- Pressing Escape closes it.
+- Focus must be trapped inside the open menu (accessibility).
+- The menu must not close unexpectedly when tapping inside (fix event propagation issues).
+- Support nested items (Services → categories) using accordion disclosure patterns on mobile, not hover dropdown.
+
+IMPLEMENTATION (NEXT + TAILWIND + SHADCN)
+- Use shadcn/ui Dialog or Sheet for the mobile menu overlay (recommended: Sheet).
+- For nested items, use shadcn/ui Accordion inside the Sheet.
+- Desktop (lg+) can use NavigationMenu or DropdownMenu, but mobile must use Sheet+Accordion.
+- Ensure z-index places menu above header and content; no clipping by parent containers.
+- Ensure the translucent header style stays consistent; mobile menu can also be translucent with blur, but must remain readable.
+
+EDGE CASES TO FIX
+- Menu items not clickable due to overlay layering or pointer-events.
+- Menu opening then instantly closing because of outside-click handler.
+- Scroll causing header reflow and breaking click targets.
+- iOS Safari: ensure position: fixed overlay works; use 100svh for height.
+
+ACCEPTANCE TESTS (MUST PASS)
+- iPhone size (360–414px): open/close works, scroll locked, links clickable.
+- Tap Services → expands accordion; selecting an item navigates and closes menu.
+- Tap outside closes. ESC closes. Focus is trapped when open.
+- No horizontal scrolling introduced.
+
+Deliver the updated header/nav components and any supporting hooks/utilities required (e.g., useLockBodyScroll, useOnClickOutside).
