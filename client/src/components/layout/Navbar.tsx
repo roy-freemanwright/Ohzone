@@ -17,6 +17,15 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+  }, [isOpen]);
+
   const navLinks = [
     { name: "Services", href: "/services" },
     { name: "Consultations", href: "/consultations" },
@@ -30,18 +39,18 @@ export function Navbar() {
     <nav
       className={cn(
         "fixed top-0 w-full z-50 transition-all duration-300",
-        scrolled ? "bg-background/80 backdrop-blur-md border-b border-border/40 py-4" : "bg-transparent py-6"
+        scrolled || isOpen ? "bg-background/95 backdrop-blur-md border-b border-border/40 py-3 md:py-4" : "bg-transparent py-4 md:py-6"
       )}
     >
-      <div className="container mx-auto px-6 flex items-center justify-between">
+      <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
         <Link href="/">
-          <a className="text-2xl font-serif font-bold tracking-tight text-foreground hover:opacity-80 transition-opacity">
+          <a className="text-xl md:text-2xl font-serif font-bold tracking-tight text-foreground hover:opacity-80 transition-opacity z-50 relative">
             OhZone<span className="text-primary font-normal">Clinics</span>
           </a>
         </Link>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden lg:flex items-center gap-6 xl:gap-8">
           {navLinks.map((link) => (
             link.external ? (
               <a
@@ -77,44 +86,50 @@ export function Navbar() {
 
         {/* Mobile Toggle */}
         <button 
-          className="md:hidden text-foreground"
+          className="lg:hidden text-foreground p-2 -mr-2 z-50 relative"
           onClick={() => setIsOpen(!isOpen)}
+          aria-label="Toggle menu"
         >
-          {isOpen ? <X /> : <Menu />}
+          {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu Overlay */}
       {isOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-background border-b border-border/40 p-6 flex flex-col gap-4 animate-in slide-in-from-top-5">
-          {navLinks.map((link) => (
-            link.external ? (
-              <a
-                key={link.name}
-                href={link.href}
-                target="_blank"
-                rel="noreferrer"
-                className="text-lg font-medium text-foreground hover:text-primary"
-                onClick={() => setIsOpen(false)}
-              >
-                {link.name}
-              </a>
-            ) : (
-              <Link key={link.name} href={link.href}>
-                <a 
-                  className="text-lg font-medium text-foreground hover:text-primary"
+        <div className="fixed inset-0 bg-background z-40 flex flex-col pt-24 px-6 animate-in slide-in-from-top-5 duration-300">
+          <div className="flex flex-col gap-6 overflow-y-auto pb-20">
+            {navLinks.map((link) => (
+              link.external ? (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-2xl font-serif font-medium text-foreground hover:text-primary border-b border-border/40 pb-4"
                   onClick={() => setIsOpen(false)}
                 >
                   {link.name}
                 </a>
-              </Link>
-            )
-          ))}
-          <Button className="w-full mt-4 bg-primary text-primary-foreground rounded-full" asChild>
-            <a href="https://ohzoneclinics.janeapp.com/" target="_blank" rel="noreferrer">
-              Book Appointment
-            </a>
-          </Button>
+              ) : (
+                <Link key={link.name} href={link.href}>
+                  <a 
+                    className={cn(
+                      "text-2xl font-serif font-medium hover:text-primary border-b border-border/40 pb-4",
+                      location === link.href ? "text-primary" : "text-foreground"
+                    )}
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {link.name}
+                  </a>
+                </Link>
+              )
+            ))}
+            <Button className="w-full mt-4 bg-primary text-primary-foreground rounded-full h-12 text-lg" asChild>
+              <a href="https://ohzoneclinics.janeapp.com/" target="_blank" rel="noreferrer">
+                Book Appointment
+              </a>
+            </Button>
+          </div>
         </div>
       )}
     </nav>
