@@ -45,7 +45,7 @@ export default function Home() {
               className="text-fluid-h1 font-serif font-medium text-white tracking-tight"
             >
               Elevate your <br className="hidden md:block" />
-              <span className="italic font-light">vitality.</span>
+              <span className="italic font-light">simple.</span>
             </motion.h1>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
@@ -75,7 +75,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* GOAL SELECTION */}
       <Section className="bg-background relative z-20 -mt-10 md:-mt-20 pt-16 pb-16 md:pt-20 md:pb-20 rounded-t-[2rem] md:rounded-t-[3rem] shadow-[0_-10px_40px_rgba(0,0,0,0.05)]">
         <div className="text-center mb-10 md:mb-16">
@@ -103,7 +102,6 @@ export default function Home() {
           ))}
         </div>
       </Section>
-
       {/* FEATURED SERVICES */}
       <Section className="bg-muted/30">
         <div className="flex flex-col md:flex-row justify-between items-end mb-8 md:mb-12">
@@ -132,7 +130,6 @@ export default function Home() {
           </Button>
         </div>
       </Section>
-
       {/* THE OHZONE METHOD */}
       <Section>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-center">
@@ -173,7 +170,6 @@ export default function Home() {
           </div>
         </div>
       </Section>
-
       {/* HOW IT WORKS */}
       <Section className="bg-secondary/30">
         <div className="text-center max-w-2xl mx-auto mb-12 md:mb-16">
@@ -205,7 +201,6 @@ export default function Home() {
           </Button>
         </div>
       </Section>
-
       {/* CELLCORE PROMO */}
       <Section className="bg-primary text-primary-foreground relative overflow-hidden">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-white/5 skew-x-12 transform origin-bottom-right"></div>
@@ -240,7 +235,6 @@ export default function Home() {
           </div>
         </div>
       </Section>
-
       {/* FINAL CTA */}
       <section className="py-16 md:py-24 text-center">
         <div className="container px-4 md:px-6">
