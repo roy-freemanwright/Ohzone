@@ -44,7 +44,7 @@ export default function Home() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-fluid-h1 font-serif font-medium text-white tracking-tight"
             >
-              Elevate your <br className="hidden md:block" />
+              Wellness made <br className="hidden md:block" />
               <span className="italic font-light">simple.</span>
             </motion.h1>
             <motion.p 
