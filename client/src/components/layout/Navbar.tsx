@@ -66,10 +66,8 @@ export function Navbar() {
       )}
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
-        <Link href="/">
-          <a className="relative z-50 text-xl md:text-2xl font-serif font-bold tracking-tight text-foreground hover:opacity-80 transition-opacity">
-            OhZone<span className="text-primary font-normal">Clinics</span>
-          </a>
+        <Link href="/" className="relative z-50 text-xl md:text-2xl font-serif font-bold tracking-tight text-foreground hover:opacity-80 transition-opacity">
+          OhZone<span className="text-primary font-normal">Clinics</span>
         </Link>
 
         {/* Desktop Nav */}
@@ -82,13 +80,11 @@ export function Navbar() {
                   <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
                     {serviceCategories.map((category) => (
                       <li key={category.name}>
-                        <Link href={category.href}>
-                          <a className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                            <div className="text-sm font-medium leading-none">{category.name}</div>
-                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                              {category.description}
-                            </p>
-                          </a>
+                        <Link href={category.href} className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                          <div className="text-sm font-medium leading-none">{category.name}</div>
+                          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                            {category.description}
+                          </p>
                         </Link>
                       </li>
                     ))}
@@ -108,14 +104,12 @@ export function Navbar() {
                       {link.name}
                     </a>
                   ) : (
-                    <Link href={link.href}>
-                      <a className={cn(
-                        navigationMenuTriggerStyle(), 
-                        "bg-transparent hover:bg-transparent hover:text-primary",
-                        location === link.href && "text-primary font-semibold"
-                      )}>
-                        {link.name}
-                      </a>
+                    <Link href={link.href} className={cn(
+                      navigationMenuTriggerStyle(), 
+                      "bg-transparent hover:bg-transparent hover:text-primary",
+                      location === link.href && "text-primary font-semibold"
+                    )}>
+                      {link.name}
                     </Link>
                   )}
                 </NavigationMenuItem>
@@ -145,10 +139,8 @@ export function Navbar() {
              <div className="flex flex-col h-full overflow-y-auto px-6 py-8">
                 <SheetHeader className="text-left mb-8 px-2">
                   <SheetTitle className="text-2xl font-serif font-bold tracking-tight">
-                    <Link href="/">
-                      <a onClick={() => setOpen(false)}>
-                        OhZone<span className="text-primary font-normal">Clinics</span>
-                      </a>
+                    <Link href="/" onClick={() => setOpen(false)}>
+                      OhZone<span className="text-primary font-normal">Clinics</span>
                     </Link>
                   </SheetTitle>
                 </SheetHeader>
@@ -160,18 +152,18 @@ export function Navbar() {
                       <AccordionContent className="pb-4 pt-2">
                         <div className="flex flex-col gap-y-6 pl-2">
                           {serviceCategories.map((cat) => (
-                            <Link key={cat.name} href={cat.href}>
-                              <a 
-                                className="group block"
-                                onClick={() => setOpen(false)}
-                              >
-                                <div className="text-base font-medium text-foreground group-hover:text-primary transition-colors mb-1">
-                                  {cat.name}
-                                </div>
-                                <div className="text-sm text-muted-foreground leading-snug">
-                                  {cat.description}
-                                </div>
-                              </a>
+                            <Link 
+                              key={cat.name} 
+                              href={cat.href}
+                              className="group block"
+                              onClick={() => setOpen(false)}
+                            >
+                              <div className="text-base font-medium text-foreground group-hover:text-primary transition-colors mb-1">
+                                {cat.name}
+                              </div>
+                              <div className="text-sm text-muted-foreground leading-snug">
+                                {cat.description}
+                              </div>
                             </Link>
                           ))}
                         </div>
@@ -192,16 +184,16 @@ export function Navbar() {
                         {link.name}
                       </a>
                     ) : (
-                      <Link key={link.name} href={link.href}>
-                        <a 
-                          className={cn(
-                            "text-xl font-serif font-medium hover:text-primary py-3 border-none block",
-                            location === link.href ? "text-primary" : "text-foreground"
-                          )}
-                          onClick={() => setOpen(false)}
-                        >
-                          {link.name}
-                        </a>
+                      <Link 
+                        key={link.name} 
+                        href={link.href}
+                        className={cn(
+                          "text-xl font-serif font-medium hover:text-primary py-3 border-none block",
+                          location === link.href ? "text-primary" : "text-foreground"
+                        )}
+                        onClick={() => setOpen(false)}
+                      >
+                        {link.name}
                       </Link>
                     )
                   ))}
