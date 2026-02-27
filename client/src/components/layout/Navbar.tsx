@@ -49,7 +49,7 @@ export function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: "Consultations", href: "/consultations" },
+    { name: "Consultations / Tour", href: "/consultations" },
     { name: "CellCore Detox", href: "/cellcore-detox" },
     { name: "About", href: "/about" },
     { name: "The Wellness Zone", href: "https://thewellness.zone", external: true },
