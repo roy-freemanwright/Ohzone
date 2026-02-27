@@ -34,6 +34,12 @@ export function Navbar() {
   const [location] = useLocation();
   const [open, setOpen] = useState(false);
 
+  const isHome = location === "/";
+  // The logo should be dark if we've scrolled, OR if we're on an inner page that starts with a white background.
+  // BUT the user asked to try to maintain the white logo. To keep the white logo, we need a dark background.
+  // A dark cyan (primary) or dark charcoal (foreground) background works well.
+  const useWhiteText = !scrolled && !isHome;
+
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
@@ -64,12 +70,14 @@ export function Navbar() {
         "fixed top-0 w-full z-50 transition-all duration-500 ease-in-out border-b",
         scrolled 
           ? "bg-background/85 backdrop-blur-md shadow-sm border-border/10 py-3 md:py-4" 
-          : "bg-background/60 backdrop-blur-md border-transparent py-4 md:py-6"
+          : isHome
+            ? "bg-background/60 backdrop-blur-md border-transparent py-4 md:py-6"
+            : "bg-primary/95 backdrop-blur-md border-transparent py-4 md:py-6 shadow-sm"
       )}
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
         <Link href="/" className="relative z-50 hover:opacity-80 transition-opacity flex items-center">
-          <img src={logo} alt="OhZone Clinics" className={cn("h-8 md:h-10 w-auto transition-all duration-500", scrolled && "drop-shadow-md brightness-0")} />
+          <img src={logo} alt="OhZone Clinics" className={cn("h-8 md:h-10 w-auto transition-all duration-500", (scrolled || (!isHome && false)) && "drop-shadow-md brightness-0")} />
         </Link>
 
         {/* Desktop Nav */}
@@ -77,7 +85,9 @@ export function Navbar() {
           <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="bg-transparent hover:bg-transparent hover:text-primary data-[state=open]:bg-transparent text-sm font-medium text-foreground/80">Services</NavigationMenuTrigger>
+                <NavigationMenuTrigger className={cn("bg-transparent hover:bg-transparent data-[state=open]:bg-transparent text-sm font-medium transition-colors",
+                  !scrolled && !isHome ? "text-primary-foreground hover:text-white/80" : "text-foreground/80 hover:text-primary"
+                )}>Services</NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
                     {serviceCategories.map((category) => (
@@ -101,15 +111,18 @@ export function Navbar() {
                       href={link.href}
                       target="_blank"
                       rel="noreferrer"
-                      className={cn(navigationMenuTriggerStyle(), "bg-transparent hover:bg-transparent hover:text-primary")}
+                      className={cn(navigationMenuTriggerStyle(), "bg-transparent hover:bg-transparent",
+                        !scrolled && !isHome ? "text-primary-foreground hover:text-white/80" : "text-foreground/80 hover:text-primary"
+                      )}
                     >
                       {link.name}
                     </a>
                   ) : (
                     <Link href={link.href} className={cn(
                       navigationMenuTriggerStyle(), 
-                      "bg-transparent hover:bg-transparent hover:text-primary",
-                      location === link.href && "text-primary font-semibold"
+                      "bg-transparent hover:bg-transparent",
+                      !scrolled && !isHome ? "text-primary-foreground hover:text-white/80" : "text-foreground/80 hover:text-primary",
+                      location === link.href && (!scrolled && !isHome ? "text-white font-semibold" : "text-primary font-semibold")
                     )}>
                       {link.name}
                     </Link>
@@ -133,7 +146,7 @@ export function Navbar() {
         {/* Mobile Toggle */}
         <Sheet open={open} onOpenChange={setOpen}>
           <SheetTrigger asChild>
-            <Button variant="ghost" size="icon" className="lg:hidden -mr-2 text-foreground" aria-label="Open Menu">
+            <Button variant="ghost" size="icon" className={cn("lg:hidden -mr-2", !scrolled && !isHome ? "text-primary-foreground" : "text-foreground")} aria-label="Open Menu">
               <Menu className="w-6 h-6" />
             </Button>
           </SheetTrigger>
