@@ -86,7 +86,7 @@ export function Navbar() {
         </Link>
 
         {/* Desktop Nav */}
-        <div className="hidden lg:flex items-center gap-6 xl:gap-8">
+        <div className="hidden lg:flex items-center gap-4 xl:gap-6">
           <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem>
