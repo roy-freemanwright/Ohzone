@@ -153,9 +153,9 @@ export default function Home() {
 
             <div className="space-y-6 md:space-y-8">
               {[
-                { num: "01", title: "Clinic Therapies", desc: "Advanced biohacking modalities like Ozone Sauna and Lymphatic drainage.", link: "/services?category=Clinic", linkText: "Explore Clinic" },
+                { num: "01", title: "Clinic Therapies", desc: "Advanced biohacking modalities like Ozone Sauna and Lymphatic drainage.", link: "/services?category=Non-Medical", linkText: "Explore Clinic" },
                 { num: "02", title: "Medical", desc: "Clinical-grade interventions including IVs, injections, and testing.", link: "/services?category=Medical", linkText: "Explore Medical" },
-                { num: "03", title: "Aesthetics & Regenerative", desc: "Restore your outer glow and inner vitality with regenerative treatments.", link: "/services?category=Aesthetics", linkText: "Explore Aesthetics" }
+                { num: "03", title: "Aesthetics & Regenerative", desc: "Restore your outer glow and inner vitality with regenerative treatments.", link: "/services?category=Non-Medical", linkText: "Explore Aesthetics" }
               ].map((item) => (
                 <div className="group" key={item.num}>
                   <h4 className="text-lg md:text-xl font-serif font-medium mb-2 flex items-center">

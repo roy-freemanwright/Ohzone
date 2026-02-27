@@ -33,10 +33,8 @@ export function ServiceCard({ service, variant = "detailed" }: ServiceCardProps)
             <div className="flex justify-between items-start mb-4">
               <span className={cn(
                 "text-[10px] uppercase tracking-widest font-bold px-2 py-1 rounded-full",
-                service.category === "Clinic" && "bg-blue-50 text-blue-700",
+                service.category === "Non-Medical" && "bg-blue-50 text-blue-700",
                 service.category === "Medical" && "bg-green-50 text-green-700",
-                service.category === "Aesthetics" && "bg-rose-50 text-rose-700",
-                service.category === "Regenerative" && "bg-purple-50 text-purple-700",
               )}>
                 {service.category}
               </span>

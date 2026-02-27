@@ -57,10 +57,10 @@ export function Navbar() {
   ];
 
   const serviceCategories = [
-    { name: "Clinic Therapies", href: "/services?category=Clinic", description: "Ozone Sauna, Lymphatic Therapy, PEMF" },
+    { name: "Clinic Therapies (Non-Medical)", href: "/services?category=Non-Medical", description: "Ozone Sauna, Lymphatic Therapy, PEMF" },
     { name: "Medical Services", href: "/services?category=Medical", description: "IV Therapy, Injections, EBO2" },
-    { name: "Aesthetics", href: "/services?category=Aesthetics", description: "Microneedling, Exosomes, Plasma Pen" },
-    { name: "Regenerative", href: "/services?category=Regenerative", description: "Prolozone, NAD+, Joint Regeneration" },
+    { name: "Aesthetics (Non-Medical)", href: "/services?category=Non-Medical", description: "Microneedling, Exosomes, Plasma Pen" },
+    { name: "Regenerative (Non-Medical)", href: "/services?category=Non-Medical", description: "Prolozone, NAD+, Joint Regeneration" },
     { name: "View All Services", href: "/services", description: "Explore our complete menu of treatments" },
   ];
 

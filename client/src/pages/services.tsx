@@ -37,7 +37,7 @@ export default function ServicesPage() {
     return categoryMatch && goalMatch;
   });
 
-  const categories: (ServiceCategory | "All")[] = ["All", "Clinic", "Medical", "Aesthetics", "Regenerative"];
+  const categories: (ServiceCategory | "All")[] = ["All", "Medical", "Non-Medical"];
 
   return (
     <>
