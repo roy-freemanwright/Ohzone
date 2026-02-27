@@ -72,7 +72,7 @@ export function Navbar() {
           ? "bg-background/85 backdrop-blur-md shadow-sm border-border/10 py-3 md:py-4" 
           : isHome
             ? "bg-background/60 backdrop-blur-md border-transparent py-4 md:py-6"
-            : "bg-primary/95 backdrop-blur-md border-transparent py-4 md:py-6 shadow-sm"
+            : "bg-[#003B4A]/80 backdrop-blur-md border-transparent py-4 md:py-6 shadow-sm"
       )}
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
