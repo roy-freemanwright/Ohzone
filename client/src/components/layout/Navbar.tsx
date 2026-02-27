@@ -70,10 +70,10 @@ export function Navbar() {
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
         <Link href="/" className="relative z-50 hover:opacity-80 transition-opacity flex items-center">
           <div className={cn(
-            "flex items-center justify-center transition-all duration-500 rounded-xl",
-            scrolled ? "bg-foreground/95 px-3 py-1.5 -ml-3 shadow-md" : "bg-transparent p-0"
+            "flex items-center justify-center transition-all duration-500 rounded-lg",
+            scrolled ? "bg-muted/80 backdrop-blur-sm px-3 py-1.5 -ml-3" : "bg-transparent p-0"
           )}>
-            <img src={logo} alt="OhZone Clinics" className="h-8 md:h-10 w-auto" />
+            <img src={logo} alt="OhZone Clinics" className={cn("h-8 md:h-10 w-auto transition-all duration-500", scrolled && "drop-shadow-md brightness-0")} />
           </div>
         </Link>
 
@@ -147,8 +147,8 @@ export function Navbar() {
                 <SheetHeader className="text-left mb-8 px-2">
                   <SheetTitle className="text-2xl font-serif font-bold tracking-tight text-left">
                     <Link href="/" onClick={() => setOpen(false)} className="inline-block">
-                      <div className="bg-foreground/95 px-3 py-2 rounded-xl inline-flex items-center justify-center">
-                        <img src={logo} alt="OhZone Clinics" className="h-8 w-auto" />
+                      <div className="bg-transparent px-0 py-2 inline-flex items-center justify-center">
+                        <img src={logo} alt="OhZone Clinics" className="h-8 w-auto brightness-0" />
                       </div>
                     </Link>
                   </SheetTitle>
