@@ -69,7 +69,12 @@ export function Navbar() {
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
         <Link href="/" className="relative z-50 hover:opacity-80 transition-opacity flex items-center">
-          <img src={logo} alt="OhZone Clinics" className="h-8 md:h-10 w-auto" />
+          <div className={cn(
+            "flex items-center justify-center transition-all duration-500 rounded-xl",
+            scrolled ? "bg-foreground/95 px-3 py-1.5 -ml-3 shadow-md" : "bg-transparent p-0"
+          )}>
+            <img src={logo} alt="OhZone Clinics" className="h-8 md:h-10 w-auto" />
+          </div>
         </Link>
 
         {/* Desktop Nav */}
@@ -142,7 +147,9 @@ export function Navbar() {
                 <SheetHeader className="text-left mb-8 px-2">
                   <SheetTitle className="text-2xl font-serif font-bold tracking-tight text-left">
                     <Link href="/" onClick={() => setOpen(false)} className="inline-block">
-                      <img src={logo} alt="OhZone Clinics" className="h-8 w-auto" />
+                      <div className="bg-foreground/95 px-3 py-2 rounded-xl inline-flex items-center justify-center">
+                        <img src={logo} alt="OhZone Clinics" className="h-8 w-auto" />
+                      </div>
                     </Link>
                   </SheetTitle>
                 </SheetHeader>
