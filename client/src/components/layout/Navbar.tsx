@@ -69,12 +69,7 @@ export function Navbar() {
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
         <Link href="/" className="relative z-50 hover:opacity-80 transition-opacity flex items-center">
-          <div className={cn(
-            "flex items-center justify-center transition-all duration-500 rounded-lg",
-            scrolled ? "bg-muted/80 backdrop-blur-sm px-3 py-1.5 -ml-3" : "bg-transparent p-0"
-          )}>
-            <img src={logo} alt="OhZone Clinics" className={cn("h-8 md:h-10 w-auto transition-all duration-500", scrolled && "drop-shadow-md brightness-0")} />
-          </div>
+          <img src={logo} alt="OhZone Clinics" className={cn("h-8 md:h-10 w-auto transition-all duration-500", scrolled && "drop-shadow-md brightness-0")} />
         </Link>
 
         {/* Desktop Nav */}
