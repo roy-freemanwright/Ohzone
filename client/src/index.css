@@ -46,35 +46,35 @@
 
 :root {
   /* H S L values */
-  /* Light Mode (Default) - Airy, Clean, Premium */
-  --background: 40 20% 97%; /* Soft warm off-white */
-  --foreground: 0 0% 15%;   /* Deep charcoal, softer than black */
+  /* Light Mode (Default) - Clean, Clinical, Modern Wellness */
+  --background: 0 0% 100%; /* #FFFFFF */
+  --foreground: 0 0% 17.6%; /* #2D2D2D */
   --card: 0 0% 100%;
-  --card-foreground: 0 0% 15%;
+  --card-foreground: 0 0% 17.6%;
   --popover: 0 0% 100%;
-  --popover-foreground: 0 0% 15%;
-  --primary: 140 20% 30%; /* Deep Sage Green - calming, trustworthy */
-  --primary-foreground: 0 0% 100%;
-  --secondary: 30 20% 90%; /* Light Sand/Beige */
-  --secondary-foreground: 0 0% 15%;
-  --muted: 30 15% 94%;
-  --muted-foreground: 0 0% 45%;
-  --accent: 20 30% 60%; /* Terracotta/Clay - warmth */
+  --popover-foreground: 0 0% 17.6%;
+  --primary: 189 100% 40%; /* #00AECC - Bright Blue */
+  --primary-foreground: 0 0% 100%; /* White */
+  --secondary: 191 45.1% 76.5%; /* #A8D4DE - Light Sky Blue */
+  --secondary-foreground: 0 0% 17.6%;
+  --muted: 193 50% 94.5%; /* #EAF5F8 - Very light sky blue tint */
+  --muted-foreground: 204 2.9% 65.7%; /* #A5A8AA - Cool Gray */
+  --accent: 189 100% 35%; /* #0098B3 - Darker hover cyan */
   --accent-foreground: 0 0% 100%;
   --destructive: 0 84.2% 60.2%;
   --destructive-foreground: 0 0% 98%;
-  --border: 30 10% 85%;
-  --input: 30 10% 85%;
-  --ring: 140 20% 30%;
+  --border: 204 2.9% 85%; /* Lighter cool gray for borders */
+  --input: 204 2.9% 85%;
+  --ring: 189 100% 40%;
   --radius: 0.5rem;
-  --sidebar: 0 0% 98%;
-  --sidebar-foreground: 240 5.3% 26.1%;
-  --sidebar-primary: 240 5.9% 10%;
-  --sidebar-primary-foreground: 0 0% 98%;
-  --sidebar-accent: 240 4.8% 95.9%;
-  --sidebar-accent-foreground: 240 5.9% 10%;
-  --sidebar-border: 220 13% 91%;
-  --sidebar-ring: 217.2 91.2% 59.8%;
+  --sidebar: 0 0% 100%;
+  --sidebar-foreground: 0 0% 17.6%;
+  --sidebar-primary: 189 100% 40%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 193 50% 94.5%;
+  --sidebar-accent-foreground: 0 0% 17.6%;
+  --sidebar-border: 204 2.9% 85%;
+  --sidebar-ring: 189 100% 40%;
 }
 
 .dark {

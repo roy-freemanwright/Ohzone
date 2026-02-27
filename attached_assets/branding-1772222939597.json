@@ -1,0 +1,143 @@
+{
+  "colorScheme": "light",
+  "fonts": [
+    {
+      "family": "Montserrat",
+      "role": "heading"
+    },
+    {
+      "family": "Open Sans",
+      "role": "body"
+    }
+  ],
+  "colors": {
+    "primary": "#A1E3F3",
+    "accent": "#00ACD8",
+    "background": "#FFFFFF",
+    "textPrimary": "#00ACD8",
+    "link": "#00ACD8"
+  },
+  "typography": {
+    "fontFamilies": {
+      "primary": "Open Sans",
+      "heading": "Montserrat"
+    },
+    "fontStacks": {
+      "heading": [
+        "Open Sans"
+      ],
+      "body": [
+        "Montserrat"
+      ],
+      "paragraph": [
+        "Montserrat"
+      ]
+    },
+    "fontSizes": {
+      "h1": "36px",
+      "h2": "50px",
+      "body": "18px"
+    }
+  },
+  "spacing": {
+    "baseUnit": 4,
+    "borderRadius": "3px"
+  },
+  "components": {
+    "input": {
+      "background": "#FFFFFF",
+      "textColor": "#444444",
+      "borderColor": "#CCCCCC",
+      "borderRadius": "3px",
+      "borderRadiusCorners": {
+        "topLeft": "3px",
+        "topRight": "3px",
+        "bottomRight": "3px",
+        "bottomLeft": "3px"
+      },
+      "shadow": "none"
+    },
+    "buttonPrimary": {
+      "background": "#00ACD8",
+      "textColor": "#FFFFFF",
+      "borderColor": "#00ACD8",
+      "borderRadius": "10px",
+      "borderRadiusCorners": {
+        "topLeft": "10px",
+        "topRight": "10px",
+        "bottomRight": "10px",
+        "bottomLeft": "10px"
+      },
+      "shadow": "none"
+    },
+    "buttonSecondary": {
+      "background": "transparent",
+      "textColor": "#FFFFFF",
+      "borderColor": "#00ACD8",
+      "borderRadius": "3px",
+      "borderRadiusCorners": {
+        "topLeft": "3px",
+        "topRight": "3px",
+        "bottomRight": "3px",
+        "bottomLeft": "3px"
+      },
+      "shadow": "rgba(0, 0, 0, 0.1) 0px 10px 20px 0px"
+    }
+  },
+  "images": {
+    "logo": "File saved at: attached_assets/logo.png",
+    "favicon": "File saved at: attached_assets/favicon.jpg",
+    "ogImage": "File saved at: attached_assets/ogImage.jpg",
+    "logoHref": "//www.ohzoneclinics.com?hsLang=en",
+    "logoAlt": "ohzone clinics"
+  },
+  "__llm_logo_reasoning": {
+    "selectedIndex": 0,
+    "reasoning": "Selected #0 because it is visible, located in the header, links to the homepage, and matches the brand name 'OhZone Clinics'.",
+    "confidence": 0.9,
+    "source": "llm"
+  },
+  "__llm_button_reasoning": {
+    "primary": {
+      "index": 1,
+      "text": "BOOK NOW",
+      "reasoning": "Button #1 ('BOOK NOW') uses the vibrant brand color #00ACD8, making it the most prominent and action-oriented CTA on the page."
+    },
+    "secondary": {
+      "index": 0,
+      "text": "Subscribe",
+      "reasoning": "Button #0 ('Subscribe') has a transparent background with a border, making it a suitable secondary action that contrasts with the primary button's vibrant color."
+    },
+    "confidence": 0.95
+  },
+  "personality": {
+    "tone": "professional",
+    "energy": "medium",
+    "targetAudience": "health-conscious individuals seeking wellness solutions"
+  },
+  "designSystem": {
+    "framework": "custom",
+    "componentLibrary": ""
+  },
+  "confidence": {
+    "buttons": 0.95,
+    "colors": 0.9,
+    "overall": 0.925
+  },
+  "__llm_metadata": {
+    "logoSelection": {
+      "llmCalled": true,
+      "llmSucceeded": true,
+      "finalSource": "llm",
+      "rawLogoSelection": {
+        "selectedLogoIndex": 0,
+        "selectedLogoReasoning": "Selected #0 because it is visible, located in the header, links to the homepage, and matches the brand name 'OhZone Clinics'.",
+        "confidence": 0.9
+      }
+    },
+    "buttonClassification": {
+      "llmCalled": true,
+      "llmSucceeded": true
+    }
+  }
+}

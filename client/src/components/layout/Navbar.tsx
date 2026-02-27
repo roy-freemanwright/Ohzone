@@ -3,6 +3,8 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Menu, ChevronDown } from "lucide-react";
 import { useState, useEffect } from "react";
+import logo from "@assets/logo.png";
+
 import {
   Sheet,
   SheetContent,
@@ -66,8 +68,8 @@ export function Navbar() {
       )}
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
-        <Link href="/" className="relative z-50 text-xl md:text-2xl font-serif font-bold tracking-tight text-foreground hover:opacity-80 transition-opacity">
-          OhZone<span className="text-primary font-normal">Clinics</span>
+        <Link href="/" className="relative z-50 hover:opacity-80 transition-opacity flex items-center">
+          <img src={logo} alt="OhZone Clinics" className="h-8 md:h-10 w-auto" />
         </Link>
 
         {/* Desktop Nav */}
@@ -138,9 +140,9 @@ export function Navbar() {
           <SheetContent side="right" className="w-full sm:w-[400px] border-l border-border/10 bg-background/95 backdrop-blur-xl p-0">
              <div className="flex flex-col h-full overflow-y-auto px-6 py-8">
                 <SheetHeader className="text-left mb-8 px-2">
-                  <SheetTitle className="text-2xl font-serif font-bold tracking-tight">
-                    <Link href="/" onClick={() => setOpen(false)}>
-                      OhZone<span className="text-primary font-normal">Clinics</span>
+                  <SheetTitle className="text-2xl font-serif font-bold tracking-tight text-left">
+                    <Link href="/" onClick={() => setOpen(false)} className="inline-block">
+                      <img src={logo} alt="OhZone Clinics" className="h-8 w-auto" />
                     </Link>
                   </SheetTitle>
                 </SheetHeader>
