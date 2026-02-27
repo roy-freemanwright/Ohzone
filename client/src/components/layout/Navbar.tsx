@@ -33,6 +33,11 @@ export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [location] = useLocation();
   const [open, setOpen] = useState(false);
+  
+  const isHome = location === "/";
+  // On non-home pages, we want the navbar to always appear as if scrolled 
+  // (white background, dark text/logo) since they don't have full-bleed dark hero images
+  const effectivelyScrolled = scrolled || !isHome;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -62,14 +67,14 @@ export function Navbar() {
     <nav
       className={cn(
         "fixed top-0 w-full z-50 transition-all duration-500 ease-in-out border-b",
-        scrolled 
+        effectivelyScrolled 
           ? "bg-background/85 backdrop-blur-md shadow-sm border-border/10 py-3 md:py-4" 
           : "bg-background/60 backdrop-blur-md border-transparent py-4 md:py-6"
       )}
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
         <Link href="/" className="relative z-50 hover:opacity-80 transition-opacity flex items-center">
-          <img src={logo} alt="OhZone Clinics" className={cn("h-8 md:h-10 w-auto transition-all duration-500", scrolled && "drop-shadow-md brightness-0")} />
+          <img src={logo} alt="OhZone Clinics" className={cn("h-8 md:h-10 w-auto transition-all duration-500", effectivelyScrolled && "drop-shadow-md brightness-0")} />
         </Link>
 
         {/* Desktop Nav */}
