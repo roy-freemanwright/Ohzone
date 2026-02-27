@@ -86,9 +86,9 @@ export function Navbar() {
         </Link>
 
         {/* Desktop Nav */}
-        <div className="hidden lg:flex items-center gap-6 xl:gap-8">
+        <div className="hidden lg:flex items-center gap-2 xl:gap-4">
           <NavigationMenu>
-            <NavigationMenuList>
+            <NavigationMenuList className="gap-1 md:gap-2">
               <NavigationMenuItem>
                 <NavigationMenuTrigger className={cn("bg-transparent hover:bg-transparent data-[state=open]:bg-transparent text-sm font-medium transition-colors",
                   !scrolled && !isHome ? "text-primary-foreground hover:text-white/80" : "text-foreground/80 hover:text-primary"
