@@ -64,6 +64,11 @@ export function Navbar() {
     { name: "View All Services", href: "/services", description: "Explore our complete menu of treatments" },
   ];
 
+  const patientBenefits = [
+    { name: "Full scripts", href: "#", description: "Prescription delivery" },
+    { name: "Vibrant America", href: "#", description: "Personalized tabs" },
+  ];
+
   return (
     <nav
       className={cn(
@@ -104,6 +109,26 @@ export function Navbar() {
                 </NavigationMenuContent>
               </NavigationMenuItem>
               
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className={cn("bg-transparent hover:bg-transparent data-[state=open]:bg-transparent text-sm font-medium transition-colors",
+                  !scrolled && !isHome ? "text-primary-foreground hover:text-white/80" : "text-foreground/80 hover:text-primary"
+                )}>Patient Benefits</NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="grid w-[300px] gap-3 p-4 md:w-[400px] md:grid-cols-1 lg:w-[400px]">
+                    {patientBenefits.map((benefit) => (
+                      <li key={benefit.name}>
+                        <a href={benefit.href} className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground opacity-60 cursor-not-allowed">
+                          <div className="text-sm font-medium leading-none">{benefit.name}</div>
+                          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground mt-1">
+                            {benefit.description}
+                          </p>
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+
               {navLinks.map((link) => (
                 <NavigationMenuItem key={link.name}>
                   {link.external ? (
@@ -182,6 +207,29 @@ export function Navbar() {
                                 {cat.description}
                               </div>
                             </Link>
+                          ))}
+                        </div>
+                      </AccordionContent>
+                    </AccordionItem>
+                    
+                    <AccordionItem value="benefits" className="border-none">
+                      <AccordionTrigger className="text-xl font-serif font-medium hover:no-underline py-3 text-left">Patient Benefits</AccordionTrigger>
+                      <AccordionContent className="pb-4 pt-2">
+                        <div className="flex flex-col gap-y-6 pl-2">
+                          {patientBenefits.map((benefit) => (
+                            <a 
+                              key={benefit.name} 
+                              href={benefit.href}
+                              className="group block opacity-60 cursor-not-allowed"
+                              onClick={(e) => e.preventDefault()}
+                            >
+                              <div className="text-base font-medium text-foreground mb-1">
+                                {benefit.name}
+                              </div>
+                              <div className="text-sm text-muted-foreground leading-snug">
+                                {benefit.description}
+                              </div>
+                            </a>
                           ))}
                         </div>
                       </AccordionContent>
