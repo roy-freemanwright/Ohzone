@@ -1,0 +1,23 @@
+Add a "Take a Tour" section to the consultation page. Use the existing site color palette and design language. Here are the details:
+Section Layout:
+•	Create button adjacent to “book a consultation” button with text "Take a Tour"
+•	Under “what to expect” section, fullwidth section with heading "Explore Our Space" Brief intro paragraph beneath the heading (e.g., "Step inside and see where wellness begins. Our state-of-the-art facility is designed with your comfort and healing in mind.")
+•	Below the intro, display a visual tour experience
+Visual Tour Options (pick the best fit for the platform):
+•	Option A — Image Gallery/Carousel: A responsive carousel or grid showcasing 6–10 high-quality photos of the facility (lobby, treatment rooms, equipment, exterior). Each image can have a short caption overlay (e.g., "HOCATT Sauna Suite," "IV Therapy Lounge," "Reception Area").
+•	Option B — Embedded Video Tour: A centered, embedded video player (YouTube/Vimeo) with a clean thumbnail and play button overlay. Add a short description beneath the video.
+Design Guidelines:
+•	Section background should use a light alternate color (e.g., #F4FAFB or light gray) to contrast with surrounding white sections
+•	Heading styled in the primary dark text color with an accent underline or highlight using the brand's cyan/blue
+•	If using a gallery, images should have subtle rounded corners and light shadows on hover
+•	Include smooth transitions/animations — fade-in on scroll or gentle slide for carousels
+•	Ensure full responsiveness: single-column stack on mobile, multi-column grid on desktop
+•	Add a CTA button at the bottom of the section (e.g., "Book a Visit" or "Schedule Your Tour") styled as a primary button
+Content Placeholders (replace with real assets):
+•	[tour-image-1.jpg] through [tour-image-8.jpg]
+•	[video-embed-url] or [virtual-tour-embed-url]
+•	Heading: "Take a Tour of Our Clinic"
+•	Subheading: "See the space where science meets serenity."
+•	CTA: "Book Your Visit" → links to booking page
+Placement: Insert this section below the what to expect section(or as contextually appropriate on the page).
+

@@ -11,9 +11,14 @@ export default function Consultations() {
           <p className="text-lg md:text-xl text-muted-foreground font-light leading-relaxed mb-6 md:mb-8">
             Navigating the world of biohacking and regenerative medicine can be overwhelming. Our consultations are designed to map your unique path to vitality.
           </p>
-          <Button size="lg" className="rounded-full px-8 w-full sm:w-auto" asChild>
-            <a href="https://ohzoneclinics.janeapp.com/" target="_blank" rel="noreferrer">Book a Consultation</a>
-          </Button>
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <Button size="lg" className="rounded-full px-8 w-full sm:w-auto" asChild>
+              <a href="https://ohzoneclinics.janeapp.com/" target="_blank" rel="noreferrer">Book a Consultation</a>
+            </Button>
+            <Button size="lg" variant="outline" className="rounded-full px-8 w-full sm:w-auto" asChild>
+              <a href="#tour">Take a Tour</a>
+            </Button>
+          </div>
         </div>
       </Section>
 
@@ -57,6 +62,44 @@ export default function Consultations() {
               </div>
             </div>
           </div>
+        </div>
+      </Section>
+
+      {/* Take a Tour Section */}
+      <Section id="tour" className="bg-muted/40">
+        <div className="text-center max-w-2xl mx-auto mb-10 md:mb-16">
+          <h2 className="text-fluid-h2 font-serif mb-4 relative inline-block">
+            Take a Tour of Our Clinic
+            <span className="absolute -bottom-2 left-1/4 right-1/4 h-1 bg-primary rounded-full opacity-80"></span>
+          </h2>
+          <p className="text-primary font-medium mb-3 mt-6">See the space where science meets serenity.</p>
+          <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
+            Step inside and see where wellness begins. Our state-of-the-art facility is designed with your comfort and healing in mind.
+          </p>
+        </div>
+
+        {/* Image Gallery */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-12">
+          {[
+            { src: "/tour-lobby.png", title: "Reception Area" },
+            { src: "/tour-iv-lounge.png", title: "IV Therapy Lounge" },
+            { src: "/tour-sauna.png", title: "HOCATT Sauna Suite" },
+            { src: "/tour-treatment.png", title: "Private Treatment Room" }
+          ].map((img, idx) => (
+            <div key={idx} className="group relative rounded-2xl overflow-hidden aspect-[4/3] shadow-sm hover:shadow-lg transition-all duration-500">
+              <img src={img.src} alt={img.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute bottom-0 left-0 right-0 p-6">
+                <h3 className="text-white font-serif text-xl tracking-wide">{img.title}</h3>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="text-center">
+          <Button size="lg" className="rounded-full px-8 w-full sm:w-auto shadow-md hover:shadow-lg transition-all" asChild>
+            <a href="https://ohzoneclinics.janeapp.com/" target="_blank" rel="noreferrer">Book Your Visit</a>
+          </Button>
         </div>
       </Section>
     </>
