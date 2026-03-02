@@ -82,7 +82,9 @@ export function Navbar() {
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
         <Link href="/" className="relative z-50 hover:opacity-80 transition-opacity flex items-center">
-          <img src={logo} alt="OhZone Clinics" className={cn("h-8 md:h-10 w-auto transition-all duration-500", (scrolled || (!isHome && false)) && "drop-shadow-md brightness-0")} />
+          <img src={logo} alt="OhZone Clinics" className={cn("h-8 md:h-10 w-auto transition-all duration-500", 
+            scrolled ? "drop-shadow-md brightness-0 opacity-70" : "opacity-100"
+          )} />
         </Link>
 
         {/* Desktop Nav */}
@@ -181,7 +183,7 @@ export function Navbar() {
                   <SheetTitle className="text-2xl font-serif font-bold tracking-tight text-left">
                     <Link href="/" onClick={() => setOpen(false)} className="inline-block">
                       <div className="bg-transparent px-0 py-2 inline-flex items-center justify-center">
-                        <img src={logo} alt="OhZone Clinics" className="h-8 w-auto brightness-0" />
+                        <img src={logo} alt="OhZone Clinics" className="h-8 w-auto brightness-0 opacity-70" />
                       </div>
                     </Link>
                   </SheetTitle>
