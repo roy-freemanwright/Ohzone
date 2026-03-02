@@ -21,7 +21,6 @@ export default function Consultations() {
           </div>
         </div>
       </Section>
-
       <Section>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-center">
           <div>
@@ -64,7 +63,6 @@ export default function Consultations() {
           </div>
         </div>
       </Section>
-
       {/* Take a Tour Section */}
       <Section id="tour" className="bg-muted/40">
         <div className="text-center max-w-2xl mx-auto mb-10 md:mb-16">
@@ -98,7 +96,7 @@ export default function Consultations() {
 
         <div className="text-center">
           <Button size="lg" className="rounded-full px-8 w-full sm:w-auto shadow-md hover:shadow-lg transition-all" asChild>
-            <a href="https://ohzoneclinics.janeapp.com/" target="_blank" rel="noreferrer">Book Your Visit</a>
+            <a href="https://ohzoneclinics.janeapp.com/" target="_blank" rel="noreferrer">Book Your In-Person Tour</a>
           </Button>
         </div>
       </Section>
