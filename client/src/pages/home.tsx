@@ -237,12 +237,12 @@ export default function Home() {
       </Section>
       {/* FINAL CTA */}
       <section className="py-16 md:py-24 text-center">
-        <div className="container px-4 md:px-6">
+        <div className="container mx-auto px-4 md:px-6 flex flex-col items-center justify-center">
           <h2 className="text-fluid-h2 font-serif mb-4 md:mb-6">Ready to feel your best?</h2>
-          <p className="text-muted-foreground text-base md:text-lg mb-8 md:mb-10 max-w-xl mx-auto">
+          <p className="text-muted-foreground text-base md:text-lg mb-8 md:mb-10 max-w-xl mx-auto text-center">
             Book your appointment today or schedule a consultation to find the perfect treatment plan for you.
           </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
             <Button size="lg" className="rounded-full px-8 h-12 text-base w-full sm:w-auto" asChild>
               <a href="https://ohzoneclinics.janeapp.com/" target="_blank" rel="noreferrer">Book Appointment</a>
             </Button>
