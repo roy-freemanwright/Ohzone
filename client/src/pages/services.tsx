@@ -69,9 +69,9 @@ export default function ServicesPage() {
         <div className="absolute inset-0 opacity-10">
            <img src={saunaTexture} className="w-full h-full object-cover grayscale" alt="texture" />
         </div>
-        <div className="container relative z-10 px-4 md:px-6 flex flex-col items-center justify-center text-center">
+        <div className="container mx-auto relative z-10 px-4 md:px-6 flex flex-col items-center justify-center text-center">
           <h1 className="text-fluid-h1 font-serif mb-4 md:mb-6">Our Services</h1>
-          <p className="text-muted-foreground max-w-2xl text-base md:text-lg">
+          <p className="text-muted-foreground max-w-2xl mx-auto text-base md:text-lg">
             Explore our comprehensive range of therapies designed to detoxify, heal, and rejuvenate.
           </p>
         </div>
