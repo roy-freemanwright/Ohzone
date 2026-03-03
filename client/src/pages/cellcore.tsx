@@ -45,14 +45,11 @@ export default function CellCore() {
           <div className="md:w-1/2 text-center md:text-left">
             <h2 className="text-fluid-h2 font-serif mb-4 md:mb-6">Start your protocol</h2>
             <p className="text-muted-foreground mb-6 text-sm md:text-base">
-              We recommend working with our practitioners to tailor the CellCore protocol to your specific needs. However, you can also browse our supplements store.
+              We recommend working with our practitioners to tailor the CellCore protocol to your specific needs.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                <Button className="w-full sm:w-auto rounded-full" asChild>
                  <a href="/consultations">Consult with Us</a>
-               </Button>
-               <Button variant="outline" className="w-full sm:w-auto rounded-full" asChild>
-                 <a href="https://www.ohzoneclinics.com/cellcore-supplements" target="_blank" rel="noreferrer">Shop Supplements</a>
                </Button>
             </div>
           </div>
