@@ -88,11 +88,11 @@ export function Navbar() {
         </Link>
 
         {/* Desktop Nav */}
-        <div className="hidden lg:flex items-center gap-1 xl:gap-3">
+        <div className="hidden lg:flex items-center gap-1 xl:gap-2">
           <NavigationMenu>
-            <NavigationMenuList className="gap-0 xl:gap-1">
+            <NavigationMenuList className="gap-0">
               <NavigationMenuItem>
-                <NavigationMenuTrigger className={cn("bg-transparent hover:bg-transparent data-[state=open]:bg-transparent px-2 xl:px-4 text-[13px] xl:text-sm font-medium transition-colors",
+                <NavigationMenuTrigger className={cn("bg-transparent hover:bg-transparent data-[state=open]:bg-transparent px-1 lg:px-2 xl:px-3 text-[12px] xl:text-[13px] font-medium transition-colors",
                   !scrolled && !isHome ? "text-primary-foreground hover:text-white/80" : "text-foreground/80 hover:text-primary"
                 )}>Services</NavigationMenuTrigger>
                 <NavigationMenuContent>
@@ -112,7 +112,7 @@ export function Navbar() {
               </NavigationMenuItem>
               
               <NavigationMenuItem>
-                <NavigationMenuTrigger className={cn("bg-transparent hover:bg-transparent data-[state=open]:bg-transparent px-2 xl:px-4 text-[13px] xl:text-sm font-medium transition-colors",
+                <NavigationMenuTrigger className={cn("bg-transparent hover:bg-transparent data-[state=open]:bg-transparent px-1 lg:px-2 xl:px-3 text-[12px] xl:text-[13px] font-medium transition-colors",
                   !scrolled && !isHome ? "text-primary-foreground hover:text-white/80" : "text-foreground/80 hover:text-primary"
                 )}>Patient Benefits</NavigationMenuTrigger>
                 <NavigationMenuContent>
@@ -138,7 +138,7 @@ export function Navbar() {
                       href={link.href}
                       target="_blank"
                       rel="noreferrer"
-                      className={cn(navigationMenuTriggerStyle(), "bg-transparent hover:bg-transparent px-2 xl:px-4 text-[13px] xl:text-sm",
+                      className={cn(navigationMenuTriggerStyle(), "bg-transparent hover:bg-transparent px-1 lg:px-2 xl:px-3 text-[12px] xl:text-[13px]",
                         !scrolled && !isHome ? "text-primary-foreground hover:text-white/80" : "text-foreground/80 hover:text-primary"
                       )}
                     >
@@ -147,7 +147,7 @@ export function Navbar() {
                   ) : (
                     <Link href={link.href} className={cn(
                       navigationMenuTriggerStyle(), 
-                      "bg-transparent hover:bg-transparent px-2 xl:px-4 text-[13px] xl:text-sm",
+                      "bg-transparent hover:bg-transparent px-1 lg:px-2 xl:px-3 text-[12px] xl:text-[13px]",
                       !scrolled && !isHome ? "text-primary-foreground hover:text-white/80" : "text-foreground/80 hover:text-primary",
                       location === link.href && (!scrolled && !isHome ? "text-white font-semibold" : "text-primary font-semibold")
                     )}>
@@ -161,7 +161,7 @@ export function Navbar() {
 
           <Button 
             variant="default" 
-            className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-5 xl:px-6 shadow-sm hover:shadow-md transition-all text-[13px] xl:text-sm"
+            className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-4 lg:px-5 xl:px-6 shadow-sm hover:shadow-md transition-all text-[12px] xl:text-[13px] ml-1"
             asChild
           >
             <a href="https://ohzoneclinics.janeapp.com/" target="_blank" rel="noreferrer">
