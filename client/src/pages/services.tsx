@@ -6,6 +6,20 @@ import { useState, useEffect } from "react";
 import { useLocation, useSearch } from "wouter";
 import { cn } from "@/lib/utils";
 import saunaTexture from "@assets/generated_images/abstract_warm_glowing_sauna_texture.png";
+import { Info } from "lucide-react";
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "@/components/ui/hover-card";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 export default function ServicesPage() {
   const [location, navigate] = useLocation();
@@ -83,18 +97,70 @@ export default function ServicesPage() {
           {/* Categories */}
           <div className="flex flex-wrap justify-center gap-2 md:gap-3">
             {categories.map(cat => (
-              <button
-                key={cat}
-                onClick={() => updateFilters(cat, activeGoal)}
-                className={cn(
-                  "px-4 py-2 md:px-6 md:py-2 rounded-full text-xs md:text-sm font-medium transition-all duration-300 border touch-manipulation",
-                  activeCategory === cat 
-                    ? "bg-primary text-primary-foreground border-primary" 
-                    : "bg-background text-muted-foreground border-border hover:border-primary/50"
-                )}
-              >
-                {cat}
-              </button>
+              cat === "Medical" ? (
+                <div 
+                  key={cat} 
+                  className={cn(
+                    "flex items-center rounded-full transition-all duration-300 border overflow-hidden",
+                    activeCategory === cat 
+                      ? "bg-primary text-primary-foreground border-primary" 
+                      : "bg-background text-muted-foreground border-border hover:border-primary/50"
+                  )}
+                >
+                  <button
+                    onClick={() => updateFilters(cat, activeGoal)}
+                    className="px-4 py-2 md:px-5 md:py-2 text-xs md:text-sm font-medium touch-manipulation h-full"
+                  >
+                    {cat}
+                  </button>
+                  <Dialog>
+                    <DialogTrigger asChild>
+                      <button 
+                        className={cn(
+                          "pr-4 pl-1 py-2 h-full flex items-center transition-opacity cursor-pointer",
+                          activeCategory === cat ? "text-primary-foreground/90 hover:text-white" : "text-muted-foreground hover:text-primary"
+                        )}
+                        aria-label="More info about Medical category"
+                      >
+                        <HoverCard openDelay={200} closeDelay={100}>
+                          <HoverCardTrigger asChild>
+                            <span className="flex items-center justify-center p-0.5">
+                              <Info className="w-3.5 h-3.5 md:w-4 md:h-4" />
+                            </span>
+                          </HoverCardTrigger>
+                          <HoverCardContent className="w-56 md:w-64 text-xs font-normal text-left text-foreground bg-popover z-50 shadow-lg border-border/50" align="center" sideOffset={12}>
+                            <p className="font-semibold mb-1">Good faith exam required.</p>
+                            <p className="text-muted-foreground">Click for more details.</p>
+                          </HoverCardContent>
+                        </HoverCard>
+                      </button>
+                    </DialogTrigger>
+                    <DialogContent className="sm:max-w-md">
+                      <DialogHeader>
+                        <DialogTitle className="font-serif text-2xl">Good Faith Exam (GFE)</DialogTitle>
+                        <DialogDescription className="text-base pt-3 leading-relaxed text-left text-foreground/80">
+                          To ensure your safety and comply with medical regulations, all clinical medical services require a <strong className="text-foreground font-semibold">Good Faith Exam (GFE)</strong> prior to treatment. 
+                          <br /><br />
+                          This is a brief consultation with our medical director or nurse practitioner to review your health history and confirm that the requested therapy is safe and appropriate for you.
+                        </DialogDescription>
+                      </DialogHeader>
+                    </DialogContent>
+                  </Dialog>
+                </div>
+              ) : (
+                <button
+                  key={cat}
+                  onClick={() => updateFilters(cat, activeGoal)}
+                  className={cn(
+                    "px-4 py-2 md:px-6 md:py-2 rounded-full text-xs md:text-sm font-medium transition-all duration-300 border touch-manipulation",
+                    activeCategory === cat 
+                      ? "bg-primary text-primary-foreground border-primary" 
+                      : "bg-background text-muted-foreground border-border hover:border-primary/50"
+                  )}
+                >
+                  {cat}
+                </button>
+              )
             ))}
           </div>
 
