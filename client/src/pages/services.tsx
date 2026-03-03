@@ -3,24 +3,47 @@ import { Button } from "@/components/ui/button";
 import { ServiceCard } from "@/components/service-card";
 import { goals, services, ServiceCategory, Service } from "@/lib/data";
 import { useState, useEffect } from "react";
-import { useLocation } from "wouter";
+import { useLocation, useSearch } from "wouter";
 import { cn } from "@/lib/utils";
 import saunaTexture from "@assets/generated_images/abstract_warm_glowing_sauna_texture.png";
 
 export default function ServicesPage() {
-  const [location] = useLocation();
+  const [location, navigate] = useLocation();
+  const searchString = useSearch();
   const [activeCategory, setActiveCategory] = useState<ServiceCategory | "All">("All");
   const [activeGoal, setActiveGoal] = useState<string | "All">("All");
 
-  // Parse query params for initial state
+  // Parse query params for initial state and when URL changes
   useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
+    const params = new URLSearchParams(searchString);
     const categoryParam = params.get("category");
     const goalParam = params.get("goal");
 
-    if (categoryParam) setActiveCategory(categoryParam as ServiceCategory);
-    if (goalParam) setActiveGoal(goalParam);
-  }, [location]);
+    if (categoryParam) {
+      setActiveCategory(categoryParam as ServiceCategory);
+    } else {
+      setActiveCategory("All");
+    }
+
+    if (goalParam) {
+      setActiveGoal(goalParam);
+    } else {
+      setActiveGoal("All");
+    }
+  }, [searchString, location]);
+
+  const updateFilters = (category: ServiceCategory | "All", goal: string | "All") => {
+    setActiveCategory(category);
+    setActiveGoal(goal);
+    
+    // Keep URL in sync so navbar links work correctly even after manual filtering
+    const params = new URLSearchParams();
+    if (category !== "All") params.set("category", category);
+    if (goal !== "All") params.set("goal", goal);
+    
+    const newSearch = params.toString();
+    navigate(newSearch ? `/services?${newSearch}` : "/services", { replace: true });
+  };
 
   const filteredServices = services.filter(service => {
     const categoryMatch = activeCategory === "All" || service.category === activeCategory;
@@ -62,7 +85,7 @@ export default function ServicesPage() {
             {categories.map(cat => (
               <button
                 key={cat}
-                onClick={() => setActiveCategory(cat)}
+                onClick={() => updateFilters(cat, activeGoal)}
                 className={cn(
                   "px-4 py-2 md:px-6 md:py-2 rounded-full text-xs md:text-sm font-medium transition-all duration-300 border touch-manipulation",
                   activeCategory === cat 
@@ -78,7 +101,7 @@ export default function ServicesPage() {
           {/* Goal Chips */}
           <div className="flex flex-wrap justify-center gap-2 max-w-4xl mx-auto">
              <button
-                onClick={() => setActiveGoal("All")}
+                onClick={() => updateFilters(activeCategory, "All")}
                 className={cn(
                   "px-3 py-1.5 md:px-4 md:py-1.5 rounded-md text-[10px] md:text-xs font-medium transition-colors border touch-manipulation",
                   activeGoal === "All" 
@@ -91,7 +114,7 @@ export default function ServicesPage() {
             {goals.map(goal => (
               <button
                 key={goal.id}
-                onClick={() => setActiveGoal(goal.id)}
+                onClick={() => updateFilters(activeCategory, goal.id)}
                 className={cn(
                   "px-3 py-1.5 md:px-4 md:py-1.5 rounded-md text-[10px] md:text-xs font-medium transition-colors border touch-manipulation",
                   activeGoal === goal.id 
@@ -116,7 +139,7 @@ export default function ServicesPage() {
           <div className="text-center py-12 md:py-20 bg-muted/20 rounded-xl">
             <h3 className="font-serif text-lg md:text-xl mb-2">No treatments found</h3>
             <p className="text-muted-foreground mb-6 text-sm md:text-base">Try adjusting your filters to see more results.</p>
-            <Button variant="outline" onClick={() => { setActiveCategory("All"); setActiveGoal("All"); }}>
+            <Button variant="outline" onClick={() => updateFilters("All", "All")}>
               Reset Filters
             </Button>
           </div>
