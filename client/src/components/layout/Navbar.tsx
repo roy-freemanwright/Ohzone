@@ -88,7 +88,7 @@ export function Navbar() {
         </Link>
 
         {/* Desktop Nav */}
-        <div className="hidden lg:flex items-center gap-1 xl:gap-2">
+        <div className="hidden xl:flex items-center gap-1 xl:gap-2">
           <NavigationMenu>
             <NavigationMenuList className="gap-0">
               <NavigationMenuItem>
@@ -173,7 +173,7 @@ export function Navbar() {
         {/* Mobile Toggle */}
         <Sheet open={open} onOpenChange={setOpen}>
           <SheetTrigger asChild>
-            <Button variant="ghost" size="icon" className={cn("lg:hidden -mr-2", !scrolled && !isHome ? "text-primary-foreground" : "text-foreground")} aria-label="Open Menu">
+            <Button variant="ghost" size="icon" className={cn("xl:hidden -mr-2", !scrolled && !isHome ? "text-primary-foreground" : "text-foreground")} aria-label="Open Menu">
               <Menu className="w-6 h-6" />
             </Button>
           </SheetTrigger>
