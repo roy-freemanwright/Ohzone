@@ -57,7 +57,7 @@ export function Navbar() {
 
   const patientBenefits = [
     { name: "Full scripts", href: "#", description: "Prescription delivery" },
-    { name: "Vibrant America", href: "#", description: "Personalized tabs" },
+    { name: "Vibrant America", href: "#", description: "Personalized labs" },
   ];
 
   return (
