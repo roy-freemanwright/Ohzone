@@ -52,7 +52,6 @@ export function Navbar() {
     { name: "Consultations / Tour", href: "/consultations" },
     { name: "CellCore Detox", href: "/cellcore-detox" },
     { name: "About", href: "/about" },
-    { name: "The Wellness Zone", href: "https://thewellness.zone", external: true },
     { name: "Contact", href: "/contact" },
   ];
 
