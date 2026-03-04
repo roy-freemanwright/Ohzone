@@ -56,8 +56,8 @@ export function Navbar() {
   ];
 
   const patientBenefits = [
-    { name: "Full scripts", href: "#", description: "Prescription delivery" },
-    { name: "Vibrant America", href: "#", description: "Personalized labs" },
+    { name: "Full scripts", href: "https://us.fullscript.com/login", description: "Prescription delivery" },
+    { name: "Vibrant America", href: "https://vibrant-wellness.mypatienthubs.com/#/login", description: "Personalized labs" },
   ];
 
   return (
@@ -110,7 +110,7 @@ export function Navbar() {
                   <ul className="grid w-[300px] gap-3 p-4 md:w-[400px] md:grid-cols-1 lg:w-[400px]">
                     {patientBenefits.map((benefit) => (
                       <li key={benefit.name}>
-                        <a href={benefit.href} className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground opacity-60 cursor-not-allowed">
+                        <a href={benefit.href} target="_blank" rel="noreferrer" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                           <div className="text-sm font-medium leading-none">{benefit.name}</div>
                           <p className="line-clamp-2 text-sm leading-snug text-muted-foreground mt-1">
                             {benefit.description}
@@ -213,10 +213,11 @@ export function Navbar() {
                             <a 
                               key={benefit.name} 
                               href={benefit.href}
-                              className="group block opacity-60 cursor-not-allowed"
-                              onClick={(e) => e.preventDefault()}
+                              target="_blank"
+                              rel="noreferrer"
+                              className="group block"
                             >
-                              <div className="text-base font-medium text-foreground mb-1">
+                              <div className="text-base font-medium text-foreground group-hover:text-primary transition-colors mb-1">
                                 {benefit.name}
                               </div>
                               <div className="text-sm text-muted-foreground leading-snug">
