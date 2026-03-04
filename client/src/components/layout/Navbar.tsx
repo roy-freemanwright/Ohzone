@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 import { Menu, ChevronDown } from "lucide-react";
 import { useState, useEffect } from "react";
 import logo from "@assets/logo.png";
+import { goals } from "@/lib/data";
 
 import {
   Sheet,
@@ -55,14 +56,6 @@ export function Navbar() {
     { name: "Contact", href: "/contact" },
   ];
 
-  const serviceCategories = [
-    { name: "Clinic Therapies (Non-Medical)", href: "/services?category=Non-Medical", description: "Ozone Sauna, Lymphatic Therapy, PEMF" },
-    { name: "Medical Services", href: "/services?category=Medical", description: "IV Therapy, Injections, EBO2" },
-    { name: "Aesthetics (Non-Medical)", href: "/services?category=Non-Medical", description: "Microneedling, Exosomes, Plasma Pen" },
-    { name: "Regenerative (Non-Medical)", href: "/services?category=Non-Medical", description: "Prolozone, NAD+, Joint Regeneration" },
-    { name: "View All Services", href: "/services", description: "Explore our complete menu of treatments" },
-  ];
-
   const patientBenefits = [
     { name: "Full scripts", href: "#", description: "Prescription delivery" },
     { name: "Vibrant America", href: "#", description: "Personalized tabs" },
@@ -93,15 +86,15 @@ export function Navbar() {
               <NavigationMenuItem>
                 <NavigationMenuTrigger className={cn("bg-transparent hover:bg-transparent data-[state=open]:bg-transparent px-1 lg:px-2 xl:px-3 text-[12px] xl:text-[13px] font-medium transition-colors",
                   !scrolled && !isHome ? "text-primary-foreground hover:text-white/80" : "text-foreground/80 hover:text-primary"
-                )}>Services</NavigationMenuTrigger>
+                )}>Choose Your Goal</NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                    {serviceCategories.map((category) => (
-                      <li key={category.name}>
-                        <Link href={category.href} className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                          <div className="text-sm font-medium leading-none">{category.name}</div>
+                    {goals.map((goal) => (
+                      <li key={goal.id}>
+                        <Link href={`/services?goal=${goal.id}`} className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                          <div className="text-sm font-medium leading-none">{goal.title}</div>
                           <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                            {category.description}
+                            {goal.description}
                           </p>
                         </Link>
                       </li>
@@ -190,22 +183,22 @@ export function Navbar() {
 
                 <div className="flex flex-col gap-y-2 flex-grow">
                   <Accordion type="single" collapsible className="w-full border-none">
-                    <AccordionItem value="services" className="border-none">
-                      <AccordionTrigger className="text-xl font-serif font-medium hover:no-underline py-3 text-left">Services</AccordionTrigger>
+                    <AccordionItem value="goals" className="border-none">
+                      <AccordionTrigger className="text-xl font-serif font-medium hover:no-underline py-3 text-left">Choose Your Goal</AccordionTrigger>
                       <AccordionContent className="pb-4 pt-2">
                         <div className="flex flex-col gap-y-6 pl-2">
-                          {serviceCategories.map((cat) => (
+                          {goals.map((goal) => (
                             <Link 
-                              key={cat.name} 
-                              href={cat.href}
+                              key={goal.id} 
+                              href={`/services?goal=${goal.id}`}
                               className="group block"
                               onClick={() => setOpen(false)}
                             >
                               <div className="text-base font-medium text-foreground group-hover:text-primary transition-colors mb-1">
-                                {cat.name}
+                                {goal.title}
                               </div>
                               <div className="text-sm text-muted-foreground leading-snug">
-                                {cat.description}
+                                {goal.description}
                               </div>
                             </Link>
                           ))}
