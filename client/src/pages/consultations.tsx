@@ -1,6 +1,7 @@
 import { Section } from "@/components/ui/section";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle2, Info } from "lucide-react";
+import heroImage from "@/assets/images/consultations-hero.jpg";
 import {
   HoverCard,
   HoverCardContent,
@@ -18,22 +19,23 @@ import {
 export default function Consultations() {
   return (
     <>
-      <Section className="pt-24 pb-16 md:pt-32 md:pb-20 bg-muted/30">
-        <div className="max-w-3xl mx-auto text-center px-4">
-          <h1 className="text-fluid-h1 font-serif mb-4 md:mb-6">Start with clarity.</h1>
-          <p className="text-lg md:text-xl text-muted-foreground font-light leading-relaxed mb-6 md:mb-8">
+      <div className="relative min-h-[50vh] md:h-[60vh] flex items-center justify-center overflow-hidden bg-black/60">
+        <img src={heroImage} alt="Modern wellness clinic" className="absolute inset-0 w-full h-full object-cover opacity-50" />
+        <div className="container relative z-10 text-center px-4 pt-16">
+          <h1 className="text-fluid-h1 font-serif text-white mb-4 md:mb-6">Start with clarity.</h1>
+          <p className="text-lg md:text-xl text-white/80 font-light leading-relaxed mb-6 md:mb-8 max-w-3xl mx-auto">
             Navigating the world of biohacking and regenerative medicine can be overwhelming. Our consultations are designed to map your unique path to vitality.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Button size="lg" className="rounded-full px-8 w-full sm:w-auto" asChild>
+            <Button size="lg" className="rounded-full px-8 w-full sm:w-auto shadow-lg" asChild>
               <a href="https://ohzoneclinics.janeapp.com/" target="_blank" rel="noreferrer">Book a Consultation</a>
             </Button>
-            <Button size="lg" variant="outline" className="rounded-full px-8 w-full sm:w-auto" asChild>
+            <Button size="lg" variant="outline" className="rounded-full px-8 w-full sm:w-auto bg-white/10 text-white border-white/20 hover:bg-white/20 hover:text-white backdrop-blur-sm" asChild>
               <a href="#tour">Take a Tour</a>
             </Button>
           </div>
         </div>
-      </Section>
+      </div>
       <Section>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-center">
           <div>
