@@ -1,6 +1,19 @@
 import { Section } from "@/components/ui/section";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowRight, CheckCircle2, Info } from "lucide-react";
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "@/components/ui/hover-card";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 export default function Consultations() {
   return (
@@ -44,10 +57,10 @@ export default function Consultations() {
               ))}
             </ul>
           </div>
-          <div className="bg-secondary/20 p-6 md:p-8 rounded-2xl border border-secondary/50">
+          <div className="bg-secondary/20 p-6 md:p-8 rounded-2xl border border-secondary/50 flex flex-col h-full">
             <h3 className="font-serif text-xl md:text-2xl mb-4">Types of Consultations</h3>
             
-            <div className="space-y-4 md:space-y-6">
+            <div className="space-y-4 md:space-y-6 flex-grow">
               <div className="bg-background p-5 md:p-6 rounded-xl shadow-sm">
                 <h4 className="font-bold text-base md:text-lg mb-1">Discovery Call</h4>
                 <p className="text-xs md:text-sm text-muted-foreground mb-2 md:mb-3">A brief 15-min phone call to answer quick questions.</p>
@@ -60,9 +73,84 @@ export default function Consultations() {
                 <span className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-primary">$150 (Applied to packages)</span>
               </div>
             </div>
+
+            <div className="mt-6 bg-primary/10 border border-primary/20 rounded-xl p-4 flex items-start gap-3">
+              <Info className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+              <div className="text-sm text-foreground/80 leading-relaxed">
+                <strong className="block text-foreground mb-1">Medical Consultations Note</strong>
+                Any consultation leading to medical services requires a 
+                <Dialog>
+                  <HoverCard>
+                    <HoverCardTrigger asChild>
+                      <DialogTrigger asChild>
+                        <button className="inline-flex items-center gap-1 font-semibold text-primary hover:text-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded px-1 mx-1 transition-colors underline decoration-primary/30 underline-offset-4 cursor-help">
+                          Good Faith Exam (GFE)
+                        </button>
+                      </DialogTrigger>
+                    </HoverCardTrigger>
+                    <HoverCardContent className="w-80 p-4" side="top" align="center">
+                      <div className="flex justify-between space-x-4">
+                        <div className="space-y-2">
+                          <h4 className="text-sm font-bold flex items-center gap-2">
+                            <Info className="w-4 h-4 text-primary" />
+                            What is a Good Faith Exam?
+                          </h4>
+                          <p className="text-xs text-muted-foreground leading-relaxed">
+                            A mandatory evaluation by a licensed medical professional prior to receiving medical services. Click to read the full details.
+                          </p>
+                        </div>
+                      </div>
+                    </HoverCardContent>
+                  </HoverCard>
+
+                  <DialogContent className="sm:max-w-[500px]">
+                    <DialogHeader>
+                      <DialogTitle className="font-serif text-2xl flex items-center gap-2">
+                        <Info className="w-6 h-6 text-primary" />
+                        Good Faith Exam (GFE)
+                      </DialogTitle>
+                      <DialogDescription className="text-base pt-4 space-y-4 text-foreground/80">
+                        <p>
+                          A Good Faith Exam (GFE) is a thorough medical evaluation required by law before a patient can receive certain medical treatments or prescription-grade therapies (such as IV therapies, specialized injections, and advanced blood treatments).
+                        </p>
+                        <p>
+                          During this exam, a licensed medical professional will:
+                        </p>
+                        <ul className="list-disc pl-5 space-y-2 text-sm">
+                          <li>Review your comprehensive medical history</li>
+                          <li>Assess your current health status and specific goals</li>
+                          <li>Determine if the requested medical treatments are safe and appropriate for you</li>
+                          <li>Establish a formal provider-patient relationship</li>
+                        </ul>
+                        <p className="text-sm font-medium text-foreground bg-primary/5 p-3 rounded-lg border border-primary/10 mt-4">
+                          This ensures the highest standard of safety and care, tailoring our medical services strictly to what your body needs and can safely process.
+                        </p>
+                      </DialogDescription>
+                    </DialogHeader>
+                  </DialogContent>
+                </Dialog>
+                prior to treatment.
+              </div>
+            </div>
           </div>
         </div>
       </Section>
+      
+      {/* New CTA Section */}
+      <Section className="bg-primary text-primary-foreground py-16 md:py-24">
+        <div className="max-w-4xl mx-auto text-center px-4">
+          <h2 className="text-fluid-h2 font-serif mb-4 md:mb-6 text-white">Ready to optimize your health?</h2>
+          <p className="text-lg md:text-xl text-primary-foreground/90 font-light mb-8 md:mb-10 max-w-2xl mx-auto leading-relaxed">
+            Take the first step towards a revitalized you. Our team is ready to help you build a personalized roadmap to optimal wellness.
+          </p>
+          <Button size="lg" className="bg-white text-primary hover:bg-white/90 rounded-full px-10 py-6 text-base font-semibold shadow-lg hover:shadow-xl transition-all" asChild>
+            <a href="https://ohzoneclinics.janeapp.com/" target="_blank" rel="noreferrer">
+              Schedule Your Consultation
+            </a>
+          </Button>
+        </div>
+      </Section>
+
       {/* Take a Tour Section */}
       <Section id="tour" className="bg-muted/40">
         <div className="text-center max-w-2xl mx-auto mb-10 md:mb-16">
