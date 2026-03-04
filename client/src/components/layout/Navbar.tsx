@@ -110,9 +110,9 @@ export function Navbar() {
                   <ul className="grid w-[300px] gap-3 p-4 md:w-[400px] md:grid-cols-1 lg:w-[400px]">
                     {patientBenefits.map((benefit) => (
                       <li key={benefit.name}>
-                        <a href={benefit.href} target="_blank" rel="noreferrer" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                        <a href={benefit.href} target="_blank" rel="noreferrer" className="group block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                           <div className="text-sm font-medium leading-none">{benefit.name}</div>
-                          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground mt-1">
+                          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground group-hover:text-accent-foreground/80 transition-colors mt-1">
                             {benefit.description}
                           </p>
                         </a>
@@ -220,7 +220,7 @@ export function Navbar() {
                               <div className="text-base font-medium text-foreground group-hover:text-primary transition-colors mb-1">
                                 {benefit.name}
                               </div>
-                              <div className="text-sm text-muted-foreground leading-snug">
+                              <div className="text-sm text-muted-foreground group-hover:text-primary/80 transition-colors leading-snug">
                                 {benefit.description}
                               </div>
                             </a>
