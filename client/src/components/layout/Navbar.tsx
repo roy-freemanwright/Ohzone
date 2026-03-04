@@ -91,9 +91,9 @@ export function Navbar() {
                   <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
                     {goals.map((goal) => (
                       <li key={goal.id}>
-                        <Link href={`/services?goal=${goal.id}`} className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                        <Link href={`/services?goal=${goal.id}`} className="group block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                           <div className="text-sm font-medium leading-none">{goal.title}</div>
-                          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground group-hover:text-accent-foreground/80 transition-colors">
                             {goal.description}
                           </p>
                         </Link>
@@ -197,7 +197,7 @@ export function Navbar() {
                               <div className="text-base font-medium text-foreground group-hover:text-primary transition-colors mb-1">
                                 {goal.title}
                               </div>
-                              <div className="text-sm text-muted-foreground leading-snug">
+                              <div className="text-sm text-muted-foreground group-hover:text-primary/80 transition-colors leading-snug">
                                 {goal.description}
                               </div>
                             </Link>
