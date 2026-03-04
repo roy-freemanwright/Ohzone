@@ -5,8 +5,8 @@ import waterTexture from "@assets/generated_images/abstract_clean_fresh_water_te
 export default function CellCore() {
   return (
     <>
-      <div className="relative min-h-[50vh] md:h-[60vh] flex items-center justify-center overflow-hidden bg-primary/90">
-        <img src={waterTexture} alt="Water" className="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-50" />
+      <div className="relative min-h-[50vh] md:h-[60vh] flex items-center justify-center overflow-hidden bg-slate-950">
+        <img src={waterTexture} alt="Water" className="absolute inset-0 w-full h-full object-cover opacity-60" />
         <div className="container relative z-10 text-center px-4 md:px-6 py-20">
           <span className="inline-block py-1 px-3 rounded-full bg-white/10 border border-white/20 text-white text-[10px] md:text-xs font-bold tracking-widest uppercase mb-4 md:mb-6">Foundational Medicine</span>
           <h1 className="text-fluid-h1 font-serif text-white mb-4 md:mb-6">CellCore Detox Protocol</h1>
