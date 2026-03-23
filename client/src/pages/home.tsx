@@ -214,7 +214,7 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button size="lg" variant="secondary" className="rounded-full w-full sm:w-auto" asChild>
-                <Link href="/cellcore-detox">Learn about the Protocol</Link>
+                <Link href="/cellcore-detox">Learn about our Protocol</Link>
               </Button>
               <Button size="lg" variant="outline" className="border-primary-foreground/20 hover:bg-white/10 text-primary-foreground rounded-full w-full sm:w-auto" asChild>
                 <a href="https://www.ohzoneclinics.com/cellcore-supplements" target="_blank" rel="noreferrer">
