@@ -21,7 +21,7 @@ export function Footer() {
             <ul className="space-y-4 text-sm text-muted-foreground">
               <li><Link href="/services"><a className="hover:text-primary transition-colors">Services</a></Link></li>
               <li><Link href="/consultations"><a className="hover:text-primary transition-colors">Consultations</a></Link></li>
-              <li><Link href="/cellcore-detox"><a className="hover:text-primary transition-colors">CellCore Detox</a></Link></li>
+              <li><Link href="/detox-protocol"><a className="hover:text-primary transition-colors">Detox Protocol</a></Link></li>
               <li><Link href="/about"><a className="hover:text-primary transition-colors">About Us</a></Link></li>
             </ul>
           </div>

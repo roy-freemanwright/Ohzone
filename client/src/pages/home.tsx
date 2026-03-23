@@ -201,20 +201,20 @@ export default function Home() {
           </Button>
         </div>
       </Section>
-      {/* CELLCORE PROMO */}
+      {/* DETOX PROTOCOL PROMO */}
       <Section className="bg-primary text-primary-foreground relative overflow-hidden">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-white/5 skew-x-12 transform origin-bottom-right"></div>
         
         <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-center">
           <div>
             <span className="inline-block py-1 px-3 rounded-full bg-white/10 border border-white/20 text-white text-[10px] font-bold tracking-widest uppercase mb-4 md:mb-6">Featured Protocol</span>
-            <h2 className="text-fluid-h2 font-serif mb-4 md:mb-6 leading-tight">CellCore Detox Protocol</h2>
+            <h2 className="text-fluid-h2 font-serif mb-4 md:mb-6 leading-tight">Detox Protocol</h2>
             <p className="text-primary-foreground/80 text-base md:text-lg mb-6 md:mb-8 leading-relaxed max-w-md">
               A comprehensive approach to detoxification. Our guided protocol helps you systematically open drainage pathways and clear toxins at a cellular level.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button size="lg" variant="secondary" className="rounded-full w-full sm:w-auto" asChild>
-                <Link href="/cellcore-detox">Learn about our Protocol</Link>
+                <Link href="/detox-protocol">Learn about our Protocol</Link>
               </Button>
               <Button size="lg" variant="outline" className="border-primary-foreground/20 hover:bg-white/10 text-primary-foreground rounded-full w-full sm:w-auto" asChild>
                 <Link href="/consultations">
@@ -224,7 +224,7 @@ export default function Home() {
             </div>
           </div>
           <div className="relative hidden md:block">
-            {/* Abstract visual for CellCore */}
+            {/* Abstract visual for Detox */}
             <div className="aspect-square rounded-full border border-white/10 flex items-center justify-center p-12 relative">
                <div className="absolute inset-0 rounded-full border border-white/5 scale-75 animate-pulse"></div>
                <div className="absolute inset-0 rounded-full border border-white/5 scale-50"></div>

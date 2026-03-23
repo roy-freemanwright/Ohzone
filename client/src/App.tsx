@@ -6,7 +6,7 @@ import Services from "@/pages/services";
 import ServiceDetail from "@/pages/service-detail";
 import NotFound from "@/pages/not-found";
 import Consultations from "@/pages/consultations";
-import CellCore from "@/pages/cellcore";
+import DetoxProtocol from "@/pages/detox-protocol";
 import About from "@/pages/about";
 import Contact from "@/pages/contact";
 
@@ -33,7 +33,7 @@ function App() {
           <Route path="/services" component={Services} />
           <Route path="/services/:slug" component={ServiceDetail} />
           <Route path="/consultations" component={Consultations} />
-          <Route path="/cellcore-detox" component={CellCore} />
+          <Route path="/detox-protocol" component={DetoxProtocol} />
           <Route path="/about" component={About} />
           <Route path="/contact" component={Contact} />
           <Route component={NotFound} />
