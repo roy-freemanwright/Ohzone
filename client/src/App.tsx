@@ -9,6 +9,8 @@ import Consultations from "@/pages/consultations";
 import DetoxProtocol from "@/pages/detox-protocol";
 import About from "@/pages/about";
 import Contact from "@/pages/contact";
+import Membership from "@/pages/membership";
+import GiftCards from "@/pages/giftcards";
 
 // Use wouter's ScrollToTop equivalent or simple wrapper
 import { useEffect } from "react";
@@ -36,6 +38,8 @@ function App() {
           <Route path="/detox-protocol" component={DetoxProtocol} />
           <Route path="/about" component={About} />
           <Route path="/contact" component={Contact} />
+          <Route path="/membership" component={Membership} />
+          <Route path="/giftcards" component={GiftCards} />
           <Route component={NotFound} />
         </Switch>
       </main>

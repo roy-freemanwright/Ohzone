@@ -51,6 +51,7 @@ export function Navbar() {
 
   const navLinks = [
     { name: "Consultations / Tour", href: "/consultations" },
+    { name: "Membership", href: "/membership" },
     { name: "About", href: "/about" },
     { name: "Contact", href: "/contact" },
   ];
