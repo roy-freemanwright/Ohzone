@@ -87,8 +87,8 @@ export default function Membership() {
 
   return (
     <>
-      <div className="relative pt-32 pb-16 md:pt-40 md:pb-20 bg-background overflow-hidden">
-        <div className="container px-4 relative z-10 text-center">
+      <div className="relative w-full pt-32 pb-16 md:pt-40 md:pb-20 bg-background overflow-hidden">
+        <div className="w-full max-w-5xl mx-auto px-4 relative z-10 flex flex-col items-center justify-center text-center">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>

@@ -5,8 +5,8 @@ import { Link } from "wouter";
 export default function GiftCards() {
   return (
     <>
-      <div className="relative pt-32 pb-16 md:pt-40 md:pb-24 bg-gradient-to-b from-primary/10 to-background overflow-hidden">
-        <div className="container px-4 relative z-10 text-center">
+      <div className="relative w-full pt-32 pb-16 md:pt-40 md:pb-24 bg-gradient-to-b from-primary/10 to-background overflow-hidden">
+        <div className="w-full max-w-5xl mx-auto px-4 relative z-10 flex flex-col items-center justify-center text-center">
           <h1 className="text-fluid-h1 font-serif mb-6">Give the Gift of Wellness</h1>
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
             Treat someone special to an unforgettable experience at OhZone Clinics.
