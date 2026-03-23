@@ -129,7 +129,7 @@ export default function ServicesPage() {
                             </span>
                           </HoverCardTrigger>
                           <HoverCardContent className="w-56 md:w-64 text-xs font-normal text-left text-foreground bg-popover z-50 shadow-lg border-border/50" align="center" sideOffset={12}>
-                            <p className="font-semibold mb-1">Good faith exam required.</p>
+                            <p className="font-semibold mb-1">Good faith exam required ($65).</p>
                             <p className="text-muted-foreground">Click for more details.</p>
                           </HoverCardContent>
                         </HoverCard>
@@ -137,9 +137,9 @@ export default function ServicesPage() {
                     </DialogTrigger>
                     <DialogContent className="sm:max-w-md">
                       <DialogHeader>
-                        <DialogTitle className="font-serif text-2xl">Good Faith Exam (GFE)</DialogTitle>
+                        <DialogTitle className="font-serif text-2xl">Good Faith Exam (GFE) - $65</DialogTitle>
                         <DialogDescription className="text-base pt-3 leading-relaxed text-left text-foreground/80">
-                          To ensure your safety and comply with medical regulations, all clinical medical services require a <strong className="text-foreground font-semibold">Good Faith Exam (GFE)</strong> prior to treatment. 
+                          To ensure your safety and comply with medical regulations, all clinical medical services require a <strong className="text-foreground font-semibold">Good Faith Exam (GFE) - $65</strong> prior to treatment. 
                           <br /><br />
                           This is a brief consultation with our medical director or nurse practitioner to review your health history and confirm that the requested therapy is safe and appropriate for you.
                         </DialogDescription>

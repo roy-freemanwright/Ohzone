@@ -86,7 +86,7 @@ export default function Consultations() {
                     <HoverCardTrigger asChild>
                       <DialogTrigger asChild>
                         <button className="inline-flex items-center gap-1 font-semibold text-primary hover:text-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded px-1 mx-1 transition-colors underline decoration-primary/30 underline-offset-4 cursor-help">
-                          Good Faith Exam (GFE)
+                          Good Faith Exam (GFE) - $65
                         </button>
                       </DialogTrigger>
                     </HoverCardTrigger>
@@ -95,7 +95,7 @@ export default function Consultations() {
                         <div className="space-y-2">
                           <h4 className="text-sm font-bold flex items-center gap-2">
                             <Info className="w-4 h-4 text-primary" />
-                            What is a Good Faith Exam?
+                            What is a Good Faith Exam? ($65)
                           </h4>
                           <p className="text-xs text-muted-foreground leading-relaxed">
                             A mandatory evaluation by a licensed medical professional prior to receiving medical services. Click to read the full details.
@@ -109,7 +109,7 @@ export default function Consultations() {
                     <DialogHeader>
                       <DialogTitle className="font-serif text-2xl flex items-center gap-2">
                         <Info className="w-6 h-6 text-primary" />
-                        Good Faith Exam (GFE)
+                        Good Faith Exam (GFE) - $65
                       </DialogTitle>
                       <DialogDescription className="text-base pt-4 space-y-4 text-foreground/80">
                         <p>
