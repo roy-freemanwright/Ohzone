@@ -57,7 +57,7 @@ export function Navbar() {
   ];
 
   const patientBenefits = [
-    { name: "Full scripts", href: "https://us.fullscript.com/login", description: "Prescription delivery" },
+    { name: "Full scripts", href: "https://us.fullscript.com/welcome/ohzoneclinics?utm_medium=webreferral&utm_source=other&utm_campaign=abmwebbuttons_light_200x200.svg&signup_source=website_buttons", description: "Prescription delivery" },
     { name: "Vibrant America", href: "https://vibrant-wellness.mypatienthubs.com/#/login", description: "Personalized labs" },
   ];
 
