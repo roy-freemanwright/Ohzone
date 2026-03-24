@@ -21,8 +21,8 @@ export default function Contact() {
                 <div>
                   <h3 className="font-serif text-lg md:text-xl mb-1">Visit Us</h3>
                   <p className="text-muted-foreground text-sm md:text-base">
-                    123 Wellness Blvd, Suite 100<br/>
-                    Dallas, TX 75201
+                    4300 MacArthur Ave, Suite 185<br/>
+                    Dallas, TX 75209
                   </p>
                 </div>
               </div>

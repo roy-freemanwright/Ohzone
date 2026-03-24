@@ -37,7 +37,7 @@ export function Footer() {
 
           <div>
             <h4 className="font-serif font-semibold mb-6">Visit Us</h4>
-            <p className="text-sm text-muted-foreground mb-2">Dallas, Texas</p>
+            <p className="text-sm text-muted-foreground mb-2">4300 MacArthur Ave, Suite 185<br/>Dallas, TX 75209</p>
             <a href="mailto:info@ohzoneclinics.com" className="text-sm text-primary hover:underline">info@ohzoneclinics.com</a>
           </div>
         </div>
