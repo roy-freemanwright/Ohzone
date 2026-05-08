@@ -79,11 +79,7 @@ export default function ServiceDetail() {
               <img 
                 src={serviceImage} 
                 alt={service.name}
-                className="w-full h-full object-cover"
-                style={{
-                  maskImage: "linear-gradient(to right, transparent 0%, black 40%)",
-                  WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 40%)"
-                }}
+                className="w-full h-full object-cover [mask-image:none] lg:[mask-image:linear-gradient(to_right,transparent_0%,black_40%)] [-webkit-mask-image:none] lg:[-webkit-mask-image:linear-gradient(to_right,transparent_0%,black_40%)]"
               />
             </div>
           </div>
