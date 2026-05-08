@@ -88,17 +88,53 @@ export default function ServiceDetail() {
       <Section className="max-w-4xl mx-auto">
         <h2 className="text-fluid-h2 font-serif mb-4 md:mb-6">About this Treatment</h2>
         <div className="prose prose-base md:prose-lg text-muted-foreground max-w-none">
-          <p>{service.description}</p>
-          <p>
-            At OhZone Clinics, we tailor every session to your specific needs. Whether you're looking for recovery, detox, or optimization, our expert staff will ensure you get the most out of your {service.name} session.
-          </p>
-          <h3 className="font-serif text-foreground mt-6 mb-3 text-xl">Benefits may include:</h3>
-          <ul className="list-disc pl-5 space-y-2">
-            <li>Enhanced cellular function</li>
-            <li>Reduced inflammation</li>
-            <li>Improved circulation and detoxification</li>
-            <li>Deep relaxation and stress relief</li>
-          </ul>
+          <p className="text-xl text-foreground font-light leading-relaxed mb-8">{service.description}</p>
+          
+          {service.detailedDescription && (
+            <div className="mb-8">
+              <h3 className="font-serif text-2xl text-foreground mb-4">What is it?</h3>
+              <p>{service.detailedDescription}</p>
+            </div>
+          )}
+
+          {service.howItWorks && service.howItWorks.length > 0 && (
+            <div className="mb-8">
+              <h3 className="font-serif text-2xl text-foreground mb-4">How it Works</h3>
+              <ul className="space-y-4 list-none pl-0">
+                {service.howItWorks.map((step, i) => (
+                  <li key={i} className="flex gap-4 items-start">
+                    <span className="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-sm font-bold mt-0.5">{i + 1}</span>
+                    <span className="pt-1">{step}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          <div className="mb-8">
+            <h3 className="font-serif text-2xl text-foreground mb-4">Key Benefits</h3>
+            <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 list-none pl-0">
+              {service.benefits ? service.benefits.map((benefit, i) => (
+                <li key={i} className="flex items-start gap-3">
+                  <Activity className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                  <span className="leading-snug">{benefit}</span>
+                </li>
+              )) : (
+                <>
+                  <li className="flex items-start gap-3"><Activity className="w-5 h-5 text-primary flex-shrink-0 mt-1" /><span>Enhanced cellular function</span></li>
+                  <li className="flex items-start gap-3"><Activity className="w-5 h-5 text-primary flex-shrink-0 mt-1" /><span>Reduced inflammation</span></li>
+                  <li className="flex items-start gap-3"><Activity className="w-5 h-5 text-primary flex-shrink-0 mt-1" /><span>Improved circulation and detoxification</span></li>
+                  <li className="flex items-start gap-3"><Activity className="w-5 h-5 text-primary flex-shrink-0 mt-1" /><span>Deep relaxation and stress relief</span></li>
+                </>
+              )}
+            </ul>
+          </div>
+          
+          <div className="bg-muted/30 p-6 md:p-8 rounded-2xl border border-border mt-10">
+            <p className="m-0 text-base md:text-lg text-foreground">
+              At OhZone Clinics, we tailor every session to your specific needs. Whether you're looking for recovery, detox, or optimization, our expert staff will ensure you get the most out of your <strong className="font-medium text-primary">{service.name}</strong> session.
+            </p>
+          </div>
         </div>
         
         <div className="mt-8 md:mt-12 p-6 md:p-8 bg-primary/5 rounded-2xl border border-primary/10">
