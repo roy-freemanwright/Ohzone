@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft, Clock, Activity, Calendar } from "lucide-react";
 import NotFound from "./not-found";
 import saunaTexture from "@assets/generated_images/abstract_warm_glowing_sauna_texture.png";
+import serviceImage from "@/assets/service-image.jpg";
 
 export default function ServiceDetail() {
   const [match, params] = useRoute("/services/:slug");
@@ -73,12 +74,16 @@ export default function ServiceDetail() {
               </div>
             </div>
 
-            <div className="relative rounded-2xl overflow-hidden aspect-video lg:aspect-square bg-muted order-1 lg:order-2">
+            <div className="relative rounded-2xl overflow-hidden aspect-video lg:aspect-square order-1 lg:order-2">
               {/* Fallback image logic or specific images if we had them */}
               <img 
-                src={saunaTexture} 
+                src={serviceImage} 
                 alt={service.name}
-                className="w-full h-full object-cover mix-blend-multiply opacity-80"
+                className="w-full h-full object-cover"
+                style={{
+                  maskImage: "linear-gradient(to right, transparent 0%, black 40%)",
+                  WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 40%)"
+                }}
               />
             </div>
           </div>
