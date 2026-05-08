@@ -46,7 +46,7 @@ export function ServiceCard({ service, variant = "detailed" }: ServiceCardProps)
             
             <h3 className="font-serif text-2xl mb-3 group-hover:text-primary transition-colors">{service.name}</h3>
             <p className="text-muted-foreground text-sm leading-relaxed mb-6 flex-grow">
-              {service.description}
+              {service.shortDescription}
             </p>
 
             <div className="flex flex-wrap gap-2 mb-6">
