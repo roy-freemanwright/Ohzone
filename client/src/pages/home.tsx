@@ -5,7 +5,7 @@ import { goals, services } from "@/lib/data";
 import { ArrowRight, Sparkles, Activity, ShieldCheck, Heart, Zap } from "lucide-react";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
-import heroImage from "@assets/generated_images/serene_modern_wellness_clinic_lobby_hero.png";
+import heroImage from "@/assets/hero-bg-new.jpg";
 import waterTexture from "@assets/generated_images/abstract_clean_fresh_water_texture.png";
 
 export default function Home() {
