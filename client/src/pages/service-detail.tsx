@@ -24,7 +24,7 @@ export default function ServiceDetail() {
           <img 
             src={serviceImage} 
             alt=""
-            className="w-full h-full object-cover opacity-90 [mask-image:linear-gradient(to_right,transparent_0%,transparent_10%,rgba(0,0,0,0.08)_25%,rgba(0,0,0,0.5)_40%,black_50%)] [-webkit-mask-image:linear-gradient(to_right,transparent_0%,transparent_10%,rgba(0,0,0,0.08)_25%,rgba(0,0,0,0.5)_40%,black_50%)]"
+            className="w-full h-full object-cover opacity-90 [mask-image:linear-gradient(to_right,transparent_0%,transparent_30%,rgba(0,0,0,0.1)_40%,rgba(0,0,0,0.6)_50%,black_60%)] [-webkit-mask-image:linear-gradient(to_right,transparent_0%,transparent_30%,rgba(0,0,0,0.1)_40%,rgba(0,0,0,0.6)_50%,black_60%)]"
           />
         </div>
 
