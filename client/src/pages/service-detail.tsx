@@ -19,70 +19,79 @@ export default function ServiceDetail() {
   return (
     <>
       <div className="relative pt-24 pb-12 md:pt-32 md:pb-24 border-b border-border/50 min-h-[60vh] flex flex-col justify-center bg-background">
-        {/* Background Image with smooth blend */}
-        <div className="absolute inset-y-0 right-0 z-0 w-full lg:w-[65%] xl:w-[55%] max-w-5xl overflow-hidden">
+        {/* Desktop Background Image with smooth blend (Hidden on mobile) */}
+        <div className="hidden lg:block absolute inset-y-0 right-0 z-0 w-[65%] xl:w-[55%] max-w-5xl overflow-hidden">
           <img 
             src={serviceImage} 
             alt={service.name}
-            className="w-full h-full object-cover object-center opacity-40 lg:opacity-100"
+            className="w-full h-full object-cover object-center"
           />
           {/* Gradient overlays to smoothly fade the image into the background color */}
-          <div className="absolute inset-0 bg-background/80 lg:bg-transparent lg:bg-gradient-to-r lg:from-background lg:via-background/70 lg:to-transparent"></div>
-          {/* Mobile fade (fade from bottom) */}
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent lg:hidden"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/70 to-transparent"></div>
         </div>
 
         <div className="container relative z-10 px-4 md:px-6 mx-auto">
           <Link href="/services">
-            <a className="inline-flex items-center text-sm text-foreground/70 hover:text-primary mb-6 md:mb-8 transition-colors bg-background/50 backdrop-blur-sm px-3 py-1.5 rounded-full">
+            <a className="inline-flex items-center text-sm text-muted-foreground lg:text-foreground/70 hover:text-primary mb-6 md:mb-8 transition-colors lg:bg-background/50 lg:backdrop-blur-sm lg:px-3 lg:py-1.5 lg:rounded-full">
               <ArrowLeft className="w-4 h-4 mr-2" /> Back to Services
             </a>
           </Link>
           
-          <div className="max-w-2xl">
-            <div className="flex flex-wrap gap-2 mb-4">
-                 <span className="px-2 py-1 md:px-3 md:py-1 bg-primary text-primary-foreground shadow-sm text-[10px] md:text-xs font-bold rounded-full uppercase tracking-wider">{service.category}</span>
-                 {service.tags.map(tag => (
-                   <span key={tag} className="px-2 py-1 md:px-3 md:py-1 bg-background/80 backdrop-blur-sm border border-border/50 text-foreground/80 shadow-sm text-[10px] md:text-xs font-medium rounded-full">{tag}</span>
-                 ))}
-            </div>
-            <h1 className="text-fluid-h1 font-serif font-medium mb-4 md:mb-6 leading-tight text-foreground drop-shadow-sm">
-              {service.name}
-            </h1>
-            <p className="text-lg md:text-xl text-foreground/90 font-medium leading-relaxed mb-6 md:mb-8 drop-shadow-sm max-w-xl">
-              {service.shortDescription}
-            </p>
-            
-            <div className="flex flex-wrap gap-4 md:gap-6 mb-6 md:mb-8 text-sm">
-              <div className="flex items-center gap-3 bg-background/60 backdrop-blur-md p-2 pr-4 rounded-full border border-border/50 shadow-sm">
-                <div className="w-8 h-8 rounded-full bg-background border border-border/50 flex items-center justify-center flex-shrink-0 shadow-sm">
-                  <Clock className="w-4 h-4 text-foreground/70" />
-                </div>
-                <div>
-                  <span className="block font-bold text-foreground text-[10px] md:text-xs uppercase tracking-wider">Duration</span>
-                  <span className="text-foreground/80 font-medium text-xs md:text-sm">{service.duration}</span>
-                </div>
-              </div>
-              <div className="flex items-center gap-3 bg-background/60 backdrop-blur-md p-2 pr-4 rounded-full border border-border/50 shadow-sm">
-                <div className="w-8 h-8 rounded-full bg-background border border-border/50 flex items-center justify-center flex-shrink-0 shadow-sm">
-                  <Activity className="w-4 h-4 text-foreground/70" />
-                </div>
-                <div>
-                  <span className="block font-bold text-foreground text-[10px] md:text-xs uppercase tracking-wider">Intensity</span>
-                  <span className="text-foreground/80 font-medium text-xs md:text-sm">{service.intensity}</span>
-                </div>
-              </div>
+          <div className="grid grid-cols-1 lg:block gap-6 md:gap-8">
+            {/* Mobile Image (Hidden on desktop) */}
+            <div className="lg:hidden relative rounded-2xl overflow-hidden aspect-video order-1">
+              <img 
+                src={serviceImage} 
+                alt={service.name}
+                className="w-full h-full object-cover"
+              />
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 mt-8">
-              <Button size="lg" className="rounded-full px-8 bg-primary hover:bg-primary/90 w-full sm:w-auto h-12 shadow-md" asChild>
-                <a href="https://ohzoneclinics.janeapp.com/" target="_blank" rel="noreferrer">
-                  Book Appointment
-                </a>
-              </Button>
-              <Button size="lg" variant="outline" className="rounded-full px-8 w-full sm:w-auto h-12 bg-background/70 backdrop-blur-md border-border/50 shadow-sm hover:bg-background/90" asChild>
-                <Link href="/consultations">Book Consultation First</Link>
-              </Button>
+            <div className="order-2 lg:max-w-2xl">
+              <div className="flex flex-wrap gap-2 mb-4">
+                   <span className="px-2 py-1 md:px-3 md:py-1 bg-primary text-primary-foreground shadow-sm text-[10px] md:text-xs font-bold rounded-full uppercase tracking-wider">{service.category}</span>
+                   {service.tags.map(tag => (
+                     <span key={tag} className="px-2 py-1 md:px-3 md:py-1 bg-background/80 lg:backdrop-blur-sm border border-border/50 text-foreground/80 shadow-sm text-[10px] md:text-xs font-medium rounded-full">{tag}</span>
+                   ))}
+              </div>
+              <h1 className="text-fluid-h1 font-serif font-medium mb-4 md:mb-6 leading-tight text-foreground lg:drop-shadow-sm">
+                {service.name}
+              </h1>
+              <p className="text-lg md:text-xl text-foreground/90 font-medium leading-relaxed mb-6 md:mb-8 lg:drop-shadow-sm max-w-xl">
+                {service.shortDescription}
+              </p>
+              
+              <div className="flex flex-wrap gap-4 md:gap-6 mb-6 md:mb-8 text-sm">
+                <div className="flex items-center gap-3 lg:bg-background/60 lg:backdrop-blur-md lg:p-2 lg:pr-4 lg:rounded-full lg:border border-border/50 lg:shadow-sm">
+                  <div className="w-8 h-8 rounded-full bg-background border border-border/50 flex items-center justify-center flex-shrink-0 shadow-sm">
+                    <Clock className="w-4 h-4 text-foreground/70" />
+                  </div>
+                  <div>
+                    <span className="block font-bold text-foreground text-[10px] md:text-xs uppercase tracking-wider">Duration</span>
+                    <span className="text-foreground/80 font-medium text-xs md:text-sm">{service.duration}</span>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3 lg:bg-background/60 lg:backdrop-blur-md lg:p-2 lg:pr-4 lg:rounded-full lg:border border-border/50 lg:shadow-sm">
+                  <div className="w-8 h-8 rounded-full bg-background border border-border/50 flex items-center justify-center flex-shrink-0 shadow-sm">
+                    <Activity className="w-4 h-4 text-foreground/70" />
+                  </div>
+                  <div>
+                    <span className="block font-bold text-foreground text-[10px] md:text-xs uppercase tracking-wider">Intensity</span>
+                    <span className="text-foreground/80 font-medium text-xs md:text-sm">{service.intensity}</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-3 md:gap-4 mt-8">
+                <Button size="lg" className="rounded-full px-8 bg-primary hover:bg-primary/90 w-full sm:w-auto h-12 shadow-md" asChild>
+                  <a href="https://ohzoneclinics.janeapp.com/" target="_blank" rel="noreferrer">
+                    Book Appointment
+                  </a>
+                </Button>
+                <Button size="lg" variant="outline" className="rounded-full px-8 w-full sm:w-auto h-12 bg-background/70 backdrop-blur-md border-border/50 shadow-sm hover:bg-background/90" asChild>
+                  <Link href="/consultations">Book Consultation First</Link>
+                </Button>
+              </div>
             </div>
           </div>
         </div>
