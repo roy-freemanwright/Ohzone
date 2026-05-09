@@ -99,7 +99,7 @@ export default function ServiceDetail() {
 
       <Section className="max-w-4xl mx-auto">
         <h2 className="text-fluid-h2 font-serif mb-4 md:mb-6">About this Treatment</h2>
-        <div className="prose prose-base md:prose-lg text-muted-foreground max-w-none">
+        <div className="prose prose-base md:prose-lg text-foreground/80 max-w-none">
           <p className="text-xl text-foreground font-light leading-relaxed mb-8">{service.description}</p>
           
           {service.detailedDescription && (
