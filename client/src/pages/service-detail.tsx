@@ -18,25 +18,16 @@ export default function ServiceDetail() {
 
   return (
     <>
-      <div className="pt-24 pb-12 md:pt-32 md:pb-16 bg-muted/30 border-b border-border/50 relative overflow-hidden">
-        {/* Background image for large screens so it bleeds beautifully */}
-        <div className="hidden lg:block absolute top-0 right-0 w-full h-full pointer-events-none -z-0">
-          <img 
-            src={serviceImage} 
-            alt=""
-            className="w-full h-full object-cover opacity-90 [mask-image:linear-gradient(to_right,transparent_0%,transparent_30%,rgba(0,0,0,0.1)_40%,rgba(0,0,0,0.6)_50%,black_60%)] [-webkit-mask-image:linear-gradient(to_right,transparent_0%,transparent_30%,rgba(0,0,0,0.1)_40%,rgba(0,0,0,0.6)_50%,black_60%)]"
-          />
-        </div>
-
-        <div className="container px-4 md:px-6 mx-auto relative z-10">
+      <div className="pt-24 pb-12 md:pt-32 md:pb-16 bg-muted/30 border-b border-border/50">
+        <div className="container px-4 md:px-6 mx-auto">
           <Link href="/services">
             <a className="inline-flex items-center text-sm text-muted-foreground hover:text-primary mb-6 md:mb-8 transition-colors">
               <ArrowLeft className="w-4 h-4 mr-2" /> Back to Services
             </a>
           </Link>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
-            <div className="order-2 lg:order-1 lg:pr-12 xl:pr-20 py-4 lg:py-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-start">
+            <div className="order-2 lg:order-1">
               <div className="flex flex-wrap gap-2 mb-4">
                  <span className="px-2 py-1 md:px-3 md:py-1 bg-primary/10 text-primary text-[10px] md:text-xs font-bold rounded-full uppercase tracking-wider">{service.category}</span>
                  {service.tags.map(tag => (
@@ -83,12 +74,12 @@ export default function ServiceDetail() {
               </div>
             </div>
 
-            <div className="relative rounded-2xl overflow-hidden aspect-video order-1 lg:hidden">
-              {/* Image only shown on small screens now, as large screens use the background bleed */}
+            <div className="relative rounded-2xl overflow-hidden aspect-video lg:aspect-square order-1 lg:order-2">
+              {/* Fallback image logic or specific images if we had them */}
               <img 
                 src={serviceImage} 
                 alt={service.name}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover [mask-image:none] lg:[mask-image:linear-gradient(to_right,transparent_0%,black_40%)] [-webkit-mask-image:none] lg:[-webkit-mask-image:linear-gradient(to_right,transparent_0%,black_40%)]"
               />
             </div>
           </div>
