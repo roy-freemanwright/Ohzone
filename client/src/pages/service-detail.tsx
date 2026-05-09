@@ -20,11 +20,12 @@ export default function ServiceDetail() {
     <>
       <div className="pt-24 pb-12 md:pt-32 md:pb-16 bg-muted/30 border-b border-border/50 relative overflow-hidden">
         {/* Background image for large screens so it bleeds beautifully */}
-        <div className="hidden lg:block absolute top-0 right-0 w-[60%] h-full pointer-events-none -z-0">
+        <div className="hidden lg:block absolute top-0 right-0 w-[70%] xl:w-[65%] h-full pointer-events-none -z-0">
+          <div className="absolute inset-0 bg-gradient-to-r from-muted/30 via-transparent to-transparent z-10" />
           <img 
             src={serviceImage} 
             alt=""
-            className="w-full h-full object-cover [mask-image:linear-gradient(to_right,transparent_0%,transparent_15%,rgba(0,0,0,0.05)_35%,rgba(0,0,0,0.3)_60%,rgba(0,0,0,0.8)_85%,black_100%)] [-webkit-mask-image:linear-gradient(to_right,transparent_0%,transparent_15%,rgba(0,0,0,0.05)_35%,rgba(0,0,0,0.3)_60%,rgba(0,0,0,0.8)_85%,black_100%)]"
+            className="w-full h-full object-cover opacity-90 [mask-image:linear-gradient(to_right,transparent_0%,rgba(0,0,0,0.4)_15%,black_35%,black_100%)] [-webkit-mask-image:linear-gradient(to_right,transparent_0%,rgba(0,0,0,0.4)_15%,black_35%,black_100%)]"
           />
         </div>
 
