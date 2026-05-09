@@ -18,16 +18,16 @@ export default function ServiceDetail() {
 
   return (
     <>
-      <div className="relative pt-24 pb-12 md:pt-32 md:pb-24 border-b border-border/50 min-h-[60vh] flex flex-col justify-center">
+      <div className="relative pt-24 pb-12 md:pt-32 md:pb-24 border-b border-border/50 min-h-[60vh] flex flex-col justify-center bg-background">
         {/* Background Image with smooth blend */}
-        <div className="absolute inset-0 z-0 overflow-hidden bg-muted/30">
+        <div className="absolute inset-y-0 right-0 z-0 w-full lg:w-[65%] xl:w-[55%] max-w-5xl overflow-hidden">
           <img 
             src={serviceImage} 
             alt={service.name}
-            className="w-full h-full object-cover object-right-top opacity-60 lg:opacity-100"
+            className="w-full h-full object-cover object-center opacity-40 lg:opacity-100"
           />
           {/* Gradient overlays to smoothly fade the image into the background color */}
-          <div className="absolute inset-0 bg-background/80 lg:bg-transparent lg:bg-gradient-to-r lg:from-background lg:via-background/95 lg:to-transparent"></div>
+          <div className="absolute inset-0 bg-background/80 lg:bg-transparent lg:bg-gradient-to-r lg:from-background lg:via-background/70 lg:to-transparent"></div>
           {/* Mobile fade (fade from bottom) */}
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent lg:hidden"></div>
         </div>
