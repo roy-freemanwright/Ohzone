@@ -75,8 +75,48 @@ export default function Home() {
           </div>
         </div>
       </section>
-      {/* GOAL SELECTION */}
+      {/* THE OHZONE METHOD */}
       <Section className="bg-background relative z-20 -mt-10 md:-mt-20 pt-16 pb-16 md:pt-20 md:pb-20 rounded-t-[2rem] md:rounded-t-[3rem] shadow-[0_-10px_40px_rgba(0,0,0,0.05)]">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-center">
+          <div className="relative rounded-2xl overflow-hidden aspect-[4/5] lg:aspect-square order-last lg:order-first">
+            <img 
+              src={waterTexture}
+              alt="The OhZone Method" 
+              className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+            />
+            <div className="absolute inset-0 bg-primary/10 mix-blend-multiply" />
+          </div>
+          
+          <div className="space-y-8 md:space-y-12">
+            <div>
+              <h2 className="text-xs md:text-sm font-bold tracking-widest uppercase text-primary mb-2 md:mb-3">The OhZone Method</h2>
+              <h3 className="text-fluid-h2 font-serif leading-tight mb-4 md:mb-6">A holistic approach to <br/><span className="italic text-muted-foreground">modern wellness.</span></h3>
+              <p className="text-base md:text-lg text-muted-foreground font-light leading-relaxed">
+                We combine ancient wisdom with cutting-edge technology to create a comprehensive wellness ecosystem. Our method is built on three pillars.
+              </p>
+            </div>
+
+            <div className="space-y-6 md:space-y-8">
+              {[
+                { num: "01", title: "Clinic Therapies", desc: "Advanced biohacking modalities like Ozone Sauna and Lymphatic drainage.", link: "/services?category=Non-Medical", linkText: "Explore Clinic" },
+                { num: "02", title: "Medical", desc: "Clinical-grade interventions including IVs, injections, and testing.", link: "/services?category=Medical", linkText: "Explore Medical" },
+                { num: "03", title: "Aesthetics & Regenerative", desc: "Restore your outer glow and inner vitality with regenerative treatments.", link: "/services?category=Non-Medical", linkText: "Explore Aesthetics" }
+              ].map((item) => (
+                <div className="group" key={item.num}>
+                  <h4 className="text-lg md:text-xl font-serif font-medium mb-2 flex items-center">
+                    <span className="w-8 h-8 rounded-full border border-primary/30 flex items-center justify-center text-xs font-sans mr-3 text-primary flex-shrink-0">{item.num}</span>
+                    {item.title}
+                  </h4>
+                  <p className="text-muted-foreground pl-11 mb-2 text-sm leading-relaxed">{item.desc}</p>
+                  <Link href={item.link}><a className="pl-11 text-xs font-bold uppercase tracking-wider text-primary inline-flex items-center opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity">{item.linkText} <ArrowRight className="w-3 h-3 ml-1" /></a></Link>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </Section>
+      {/* GOAL SELECTION */}
+      <Section className="bg-muted/10">
         <div className="text-center mb-10 md:mb-16">
           <h2 className="text-xs md:text-sm font-sans font-bold tracking-widest uppercase text-muted-foreground mb-2 md:mb-3">Your Journey Starts Here</h2>
           <h3 className="text-fluid-h2 font-serif text-foreground">Choose your goal</h3>
@@ -128,46 +168,6 @@ export default function Home() {
               View all therapies
             </Link>
           </Button>
-        </div>
-      </Section>
-      {/* THE OHZONE METHOD */}
-      <Section>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-center">
-          <div className="relative rounded-2xl overflow-hidden aspect-[4/5] lg:aspect-square order-last lg:order-first">
-            <img 
-              src={waterTexture}
-              alt="The OhZone Method" 
-              className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-            />
-            <div className="absolute inset-0 bg-primary/10 mix-blend-multiply" />
-          </div>
-          
-          <div className="space-y-8 md:space-y-12">
-            <div>
-              <h2 className="text-xs md:text-sm font-bold tracking-widest uppercase text-primary mb-2 md:mb-3">The OhZone Method</h2>
-              <h3 className="text-fluid-h2 font-serif leading-tight mb-4 md:mb-6">A holistic approach to <br/><span className="italic text-muted-foreground">modern wellness.</span></h3>
-              <p className="text-base md:text-lg text-muted-foreground font-light leading-relaxed">
-                We combine ancient wisdom with cutting-edge technology to create a comprehensive wellness ecosystem. Our method is built on three pillars.
-              </p>
-            </div>
-
-            <div className="space-y-6 md:space-y-8">
-              {[
-                { num: "01", title: "Clinic Therapies", desc: "Advanced biohacking modalities like Ozone Sauna and Lymphatic drainage.", link: "/services?category=Non-Medical", linkText: "Explore Clinic" },
-                { num: "02", title: "Medical", desc: "Clinical-grade interventions including IVs, injections, and testing.", link: "/services?category=Medical", linkText: "Explore Medical" },
-                { num: "03", title: "Aesthetics & Regenerative", desc: "Restore your outer glow and inner vitality with regenerative treatments.", link: "/services?category=Non-Medical", linkText: "Explore Aesthetics" }
-              ].map((item) => (
-                <div className="group" key={item.num}>
-                  <h4 className="text-lg md:text-xl font-serif font-medium mb-2 flex items-center">
-                    <span className="w-8 h-8 rounded-full border border-primary/30 flex items-center justify-center text-xs font-sans mr-3 text-primary flex-shrink-0">{item.num}</span>
-                    {item.title}
-                  </h4>
-                  <p className="text-muted-foreground pl-11 mb-2 text-sm leading-relaxed">{item.desc}</p>
-                  <Link href={item.link}><a className="pl-11 text-xs font-bold uppercase tracking-wider text-primary inline-flex items-center opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity">{item.linkText} <ArrowRight className="w-3 h-3 ml-1" /></a></Link>
-                </div>
-              ))}
-            </div>
-          </div>
         </div>
       </Section>
       {/* HOW IT WORKS */}
